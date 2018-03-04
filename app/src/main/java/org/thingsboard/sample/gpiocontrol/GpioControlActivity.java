@@ -40,6 +40,7 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.thingsboard.sample.gpiocontrol.tts.TtsOutput;
+import org.thingsboard.sample.gpiocontrol.util.GetInternetTime;
 import org.thingsboard.sample.gpiocontrol.util.WriteReadADBShell;
 
 import java.io.IOException;
@@ -51,6 +52,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -113,18 +115,24 @@ public class GpioControlActivity extends Activity implements InitListener, Synth
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        cpuTemp_textview =  findViewById(R.id.cpu_temp);
+        cpuTemp_textview = findViewById(R.id.cpu_temp);
         time_textview = findViewById(R.id.time_textview);
         findViewById(R.id.startActivity_button).setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               Log.e("ee","2222");
-               Intent intent = new Intent(GpioControlActivity.this, NewActivity.class);
-               startActivity(intent);
-           }
-       });
-       // initMqttAndTts();
+            @Override
+            public void onClick(View view) {
+                Log.e("ee", "2222");
+                Intent intent = new Intent(GpioControlActivity.this, NewActivity.class);
+                startActivity(intent);
+            }
+        });
+        setSystemTime();
+        // initMqttAndTts();
 
+    }
+
+    private void setSystemTime() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(GetInternetTime.getInternetTime());
     }
 
     private void initMqttAndTts() {
@@ -155,7 +163,7 @@ public class GpioControlActivity extends Activity implements InitListener, Synth
     @Override
     protected void onStart() {
         super.onStart();
-       // mqttConnect();
+        // mqttConnect();
         getDeviceTemplate(1);
     }
 
@@ -195,7 +203,7 @@ public class GpioControlActivity extends Activity implements InitListener, Synth
     @Override
     protected void onStop() {
         super.onStop();
-       // mqttDisconnect();
+        // mqttDisconnect();
     }
 
     @Override
@@ -392,25 +400,13 @@ public class GpioControlActivity extends Activity implements InitListener, Synth
     }
 
     private void getNetTime() {
-        URL url = null;//取得资源对象
-        try {
-            url = new URL("http://www.baidu.com");
-            //url = new URL("http://www.ntsc.ac.cn");//中国科学院国家授时中心
-            URLConnection uc = url.openConnection();//生成连接对象
-            uc.connect(); //发出连接
-            long ld = uc.getDate(); //取得网站日期时间
-            DateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日\n\nHH:mm:ss");
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTimeInMillis(ld);
-            final String format = formatter.format(calendar.getTime());
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    time_textview.setText(format);
-                }
-            });
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日HH:mm:ss", Locale.CHINESE);
+        final String format = formatter.format(GetInternetTime.getInternetTime());
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                time_textview.setText(format);
+            }
+        });
     }
 }

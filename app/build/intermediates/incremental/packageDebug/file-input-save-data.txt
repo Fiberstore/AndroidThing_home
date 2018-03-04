@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Mar 04 22:59:55 CST 2018
+#Mon Mar 05 00:00:23 CST 2018
 14.set=JAVA_RESOURCE
 180.file=F\:\\androidThing\\AndroidThing-xunfeiTTS-master\\AndroidThing-xunfeiTTS-master\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\color-v23\\abc_btn_colored_text_material.xml
 118.set=ANDROID_RESOURCE
