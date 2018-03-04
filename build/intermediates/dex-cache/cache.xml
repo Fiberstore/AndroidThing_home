@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="952944218ecedea1554a513dec0c14d570642843">
+        <dex dex="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-26.0.0-alpha1_8864256d6e0efaa05f742d7a2aeb80778daff2e3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\build\intermediates\exploded-aar\com.android.support\support-compat\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
+        <dex dex="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-26.0.0-alpha1_c8366cda0d03f533ac155e052a7adb0f7a12ffc6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9935891f23923f39d002087085d9696568a9f657">
+        <dex dex="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-26.0.0-alpha1_d2f1cba63567bb3a2eff8aecb133824ea7c1b30a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
+        <dex dex="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-26.0.0-alpha1_f733989bc471693df0d5218d41365e23c2ec16e5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-26.0.0-alpha1_7ee0705c088968a9715a1f7409b3017f8613bcef.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-26.0.0-alpha1_0b477bb919da04fbbdfb85c12e0d7f8e32c06f37.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
+        <dex dex="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-26.0.0-alpha1_6273f336e0a2916f03a88930d46e2dbbb851861c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
+        <dex dex="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-26.0.0-alpha1_d5191256028ceaabd19c49356bae15a2928a5c12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\sdk6.0\extras\android\m2repository\com\android\support\support-annotations\26.0.0-alpha1\support-annotations-26.0.0-alpha1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="023ee503b631f69511e335a061ea008f8da60f40">
+        <dex dex="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\build\intermediates\pre-dexed\debug\support-annotations-26.0.0-alpha1_0f8045efba5df346ea31083cf3de0a3296170e9b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\libs\Sunflower.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="662ecdfa5fa755ef7d5de03ccbfaaf8b9ee23250">
+        <dex dex="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\build\intermediates\pre-dexed\debug\Sunflower_4712c9bfb86da2bbec2307283b2be7cebcf09d28.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\build\intermediates\exploded-aar\com.android.support\support-fragment\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
+        <dex dex="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-26.0.0-alpha1_fc00fe9e1065e9b3d7a2ff412f285f06ca7faa74.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zhangxiang\.gradle\caches\modules-2\files-2.1\org.eclipse.paho\org.eclipse.paho.client.mqttv3\1.1.0\89d827ffa47c241f2627421ef1d6c7a8c207a341\org.eclipse.paho.client.mqttv3-1.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="89d827ffa47c241f2627421ef1d6c7a8c207a341">
+        <dex dex="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\build\intermediates\pre-dexed\debug\org.eclipse.paho.client.mqttv3-1.1.0_aca528e864392f690c92d29a3cef7b4dc5db71a2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\libs\Msc.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c780862c40d4942fe3e0df73f24a4c47e6b6650d">
+        <dex dex="F:\androidThing\AndroidThing-xunfeiTTS-master\AndroidThing-xunfeiTTS-master\app\build\intermediates\pre-dexed\debug\Msc_06dbf9a032eecfd81370b81ef95e7595f68637bf.jar" />
+    </item>
+
+</items>
