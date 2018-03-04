@@ -108,6 +108,7 @@ public class GpioControlActivity extends Activity implements InitListener, Synth
     private Button startActivity_button;
     private TextView time_textview;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
