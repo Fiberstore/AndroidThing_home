@@ -26,6 +26,7 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.google.android.things.pio.Gpio;
@@ -107,7 +108,6 @@ public class GpioControlActivity extends Activity implements InitListener, Synth
             cpuTemp_textview.setText(temp + "℃");
         }
     };
-    private Button startActivity_button;
     private TextView time_textview;
 
 
@@ -117,6 +117,23 @@ public class GpioControlActivity extends Activity implements InitListener, Synth
         setContentView(R.layout.activity_main);
         cpuTemp_textview = findViewById(R.id.cpu_temp);
         time_textview = findViewById(R.id.time_textview);
+        SeekBar seekBar=findViewById(R.id.seekBar);
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                Log.e("press", progress+"");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
         findViewById(R.id.startActivity_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -125,7 +142,7 @@ public class GpioControlActivity extends Activity implements InitListener, Synth
                 startActivity(intent);
             }
         });
-        setSystemTime();
+      //  setSystemTime();
         // initMqttAndTts();
 
     }
@@ -164,7 +181,7 @@ public class GpioControlActivity extends Activity implements InitListener, Synth
     protected void onStart() {
         super.onStart();
         // mqttConnect();
-        getDeviceTemplate(1);
+      //  getDeviceTemplate(1);
     }
 
     /**

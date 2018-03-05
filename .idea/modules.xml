@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidThing-xunfeiTTS-master.iml" filepath="$PROJECT_DIR$/AndroidThing-xunfeiTTS-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidThing_home.iml" filepath="$PROJECT_DIR$/AndroidThing_home.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
