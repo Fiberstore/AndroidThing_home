@@ -15,6 +15,7 @@ public class TimeActivity extends BaseActivity {
 
     private TextView timeTextview;
     private TextView weekTextview;
+    private String week;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

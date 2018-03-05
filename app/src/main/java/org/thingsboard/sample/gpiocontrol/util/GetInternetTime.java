@@ -41,7 +41,7 @@ public class GetInternetTime {
     }
 
     public static String getWeek() {
-
+        hourformatter.setTimeZone(TimeZone.getTimeZone("GMT+08:00"));
         String week = weekformatter.format(GetInternetTime.getInternetTime());
         return week;
     }
