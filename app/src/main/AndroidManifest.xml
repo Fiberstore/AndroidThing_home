@@ -41,7 +41,7 @@
 
         <uses-library android:name="com.google.android.things" />
 
-        <activity android:name=".GpioControlActivity">
+        <activity android:name=".activity.TimeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -55,6 +55,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewActivity"/>
+        <activity android:name=".activity.GpioControlActivity"/>
+        <activity android:name=".activity.NewActivity"/>
     </application>
 </manifest>

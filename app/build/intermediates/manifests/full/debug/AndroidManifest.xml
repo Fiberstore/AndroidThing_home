@@ -52,7 +52,7 @@
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
         <uses-library android:name="com.google.android.things" />
 
-        <activity android:name="org.thingsboard.sample.gpiocontrol.GpioControlActivity" >
+        <activity android:name="org.thingsboard.sample.gpiocontrol.activity.TimeActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -67,7 +67,8 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="org.thingsboard.sample.gpiocontrol.NewActivity" />
+        <activity android:name="org.thingsboard.sample.gpiocontrol.activity.GpioControlActivity" />
+        <activity android:name="org.thingsboard.sample.gpiocontrol.activity.NewActivity" />
     </application>
 
 </manifest>

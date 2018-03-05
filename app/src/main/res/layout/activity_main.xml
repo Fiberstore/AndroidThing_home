@@ -8,8 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/col_23282D"
-    tools:context=".GpioControlActivity">
+    tools:context=".activity.GpioControlActivity">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -17,17 +16,16 @@
         android:orientation="horizontal">
 
         <TextView
-            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CPUtemp:" />
+            android:text="CPU温度:"
+            android:fontFamily="@font/msyh"/>
 
         <TextView
-            android:textColor="@color/white"
-
             android:id="@+id/cpu_temp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/msyh"/>
     </LinearLayout>
 
     <LinearLayout
@@ -36,28 +34,24 @@
         android:orientation="horizontal">
 
         <TextView
-            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Time:" />
+            android:text="时间:"
+            android:fontFamily="@font/msyh"/>
 
         <TextView
-            android:textColor="@color/white"
             android:id="@+id/time_textview"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/msyh"/>
     </LinearLayout>
 
     <Button
         android:id="@+id/startActivity_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="跳转到新的页面" />
+        android:text="跳转到新的页面"
+        android:fontFamily="@font/msyh"/>
 
-    <SeekBar
-        android:layout_marginTop="20dp"
-        android:id="@+id/seekBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
 </LinearLayout>
