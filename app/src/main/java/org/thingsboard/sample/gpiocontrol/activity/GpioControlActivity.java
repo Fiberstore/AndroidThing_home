@@ -15,42 +15,11 @@
  */
 package org.thingsboard.sample.gpiocontrol.activity;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.util.Log;
-import android.view.View;
-import android.widget.TextView;
-
-import com.google.android.things.pio.Gpio;
-import com.google.android.things.pio.PeripheralManagerService;
-import com.iflytek.cloud.ErrorCode;
-import com.iflytek.cloud.InitListener;
-import com.iflytek.cloud.SpeechError;
-import com.iflytek.cloud.SynthesizerListener;
-
-import org.eclipse.paho.client.mqttv3.*;
-import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
-import org.json.JSONObject;
-import org.thingsboard.sample.gpiocontrol.R;
 import org.thingsboard.sample.gpiocontrol.base.BaseActivity;
-import org.thingsboard.sample.gpiocontrol.tts.TtsOutput;
-import org.thingsboard.sample.gpiocontrol.util.GetInternetTime;
-import org.thingsboard.sample.gpiocontrol.util.WriteReadADBShell;
 
-import java.io.IOException;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+public class GpioControlActivity extends BaseActivity /*implements InitListener, SynthesizerListener*/ {
 
-public class GpioControlActivity extends BaseActivity implements InitListener, SynthesizerListener {
-
-    private static final String TAG = GpioControlActivity.class.getSimpleName();
+ /*   private static final String TAG = GpioControlActivity.class.getSimpleName();
 
     private static final String THINGSBOARD_HOST = "192.168.191.1";
     private static final String ACCESS_TOKEN = "fs.com_android_ting";
@@ -162,7 +131,7 @@ public class GpioControlActivity extends BaseActivity implements InitListener, S
             Message message = new Message();
             message.obj = temp;
             myHandler.sendMessage(message);
-          /*  JSONObject jsonObject = new JSONObject();
+          *//*  JSONObject jsonObject = new JSONObject();
             try {
                 String temperatureJSON = jsonObject.put("temperature", temp).toString();
                 MqttMessage mqttMessage = new MqttMessage(temperatureJSON.getBytes());
@@ -170,7 +139,7 @@ public class GpioControlActivity extends BaseActivity implements InitListener, S
                 mThingsboardMqttClient.publish("v1/devices/me/attributes", mqttMessage);
             } catch (Exception e) {
                 e.printStackTrace();
-            }*/
+            }*//*
 
         }
     }
@@ -298,7 +267,7 @@ public class GpioControlActivity extends BaseActivity implements InitListener, S
     private void updateGpioStatus(int pin, boolean enabled, String requestId) throws Exception {
 
 
-        /**语音输出*/
+        *//**语音输出*//*
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(enabled == true ? "打开" : "关闭");
         stringBuilder.append(pin + " ");
@@ -372,5 +341,5 @@ public class GpioControlActivity extends BaseActivity implements InitListener, S
     @Override
     public void onEvent(int i, int i1, int i2, Bundle bundle) {
 
-    }
+    }*/
 }

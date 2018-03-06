@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-61:12
-INJECTED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-61:12
-INJECTED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-61:12
-INJECTED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-61:12
+ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-62:12
+INJECTED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-62:12
+INJECTED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-62:12
+INJECTED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-62:12
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0-alpha1.aar\e21f0680faf5a785e596865a1c21cf97\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-alpha1.aar\a65f464c8c5b95e4c99ec8f06e0f57b0\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-alpha1.aar\58819152946bc54c384cd78bb9188bd7\AndroidManifest.xml:17:1-31:12
@@ -13,20 +13,20 @@ MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Adminis
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0-alpha1.aar\2eed659f2501b131d1b75fbd30bb6e6f\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0-alpha1.aar\75c11f47a3f69f42aac0cfed19cf55a2\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0-alpha1.aar\1cc2df396cf762dff5fc8bfa4ff0e12e\AndroidManifest.xml:17:1-31:12
-INJECTED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-61:12
-INJECTED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-61:12
-INJECTED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-61:12
+INJECTED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-62:12
+INJECTED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-62:12
+INJECTED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-62:12
 	package
 		ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:19:5-49
 		INJECTED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml
 		INJECTED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml
-		ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-61:12
+		ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-62:12
 		INJECTED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml
-		ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-61:12
+		ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-62:12
 		INJECTED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:18:11-69
@@ -79,7 +79,7 @@ ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\Andr
 	android:name
 		ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:33:22-78
 application
-ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:35:5-60:19
+ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:35:5-61:19
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0-alpha1.aar\e21f0680faf5a785e596865a1c21cf97\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0-alpha1.aar\e21f0680faf5a785e596865a1c21cf97\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-alpha1.aar\a65f464c8c5b95e4c99ec8f06e0f57b0\AndroidManifest.xml:29:5-20
@@ -112,10 +112,10 @@ uses-library#com.google.android.things
 ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:42:9-66
 	android:name
 		ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:42:23-63
-activity#org.thingsboard.sample.gpiocontrol.activity.TimeActivity
+activity#org.thingsboard.sample.gpiocontrol.activity.MqttTest
 ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:44:9-57:20
 	android:name
-		ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:44:19-56
+		ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:44:19-52
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
 ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:45:13-48:29
 action#android.intent.action.MAIN
@@ -136,14 +136,18 @@ category#android.intent.category.DEFAULT
 ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:55:17-76
 	android:name
 		ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:55:27-73
+activity#org.thingsboard.sample.gpiocontrol.activity.TimeActivity
+ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:58:9-58
+	android:name
+		ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:58:19-56
 activity#org.thingsboard.sample.gpiocontrol.activity.GpioControlActivity
-ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:58:9-65
+ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:59:9-65
 	android:name
-		ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:58:19-63
+		ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:59:19-63
 activity#org.thingsboard.sample.gpiocontrol.activity.NewActivity
-ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:59:9-57
+ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:60:9-57
 	android:name
-		ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:59:19-55
+		ADDED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml:60:19-55
 uses-sdk
 INJECTED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from F:\android_thing\androidThingHome\AndroidThing_home\app\src\main\AndroidManifest.xml
