@@ -18,9 +18,6 @@ import java.io.InputStreamReader;
 
 public class WriteReadADBShell {
 
-    /**
-     * adb shell 读取系统温度
-     */
     public static String read(String sys_path) {
         try {
             Runtime runtime = Runtime.getRuntime();
@@ -38,6 +35,33 @@ public class WriteReadADBShell {
             Log.w("adb-shell", "*** ERROR *** Here is what I know: " + e.getMessage());
         }
         return null;
+    }
+
+
+    /**
+     * adb shell 读取系统温度
+     */
+    public static String read() {
+        try {
+            Runtime runtime = Runtime.getRuntime();
+            /**此处进行读操作*/
+            Process process = runtime.exec("cat " + "/sys/class/thermal/thermal_zone0/temp");
+            InputStream is = process.getInputStream();
+            InputStreamReader isr = new InputStreamReader(is);
+            BufferedReader br = new BufferedReader(isr);
+            String line;
+            while (null != (line = br.readLine())) {
+                return line;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.w("adb-shell", "*** ERROR *** Here is what I know: " + e.getMessage());
+        }
+        return null;
+    }
+
+    public static double getCPUTemp() {
+        return Integer.parseInt(read()) / 1000.0;
     }
 
 

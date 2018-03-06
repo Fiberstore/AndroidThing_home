@@ -1,8 +1,10 @@
 package org.thingsboard.sample.gpiocontrol.activity;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 
@@ -18,6 +20,8 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 import org.json.JSONObject;
 import org.thingsboard.sample.gpiocontrol.R;
 import org.thingsboard.sample.gpiocontrol.base.BaseActivity;
+import org.thingsboard.sample.gpiocontrol.util.Utils;
+import org.thingsboard.sample.gpiocontrol.util.WriteReadADBShell;
 
 
 /**
@@ -29,29 +33,44 @@ import org.thingsboard.sample.gpiocontrol.base.BaseActivity;
 
 public class MqttTest extends BaseActivity {
 
-    /**主机名称*/
+    /**
+     * 主机名称
+     */
     private static final String HOST = "tcp://android_home.mqtt.iot.gz.baidubce.com:1883";
-    /**用户名*/
+    /**
+     * 用户名
+     */
     private static final String USERNAME = "android_home/esp8266";
-    /**密码*/
+    /**
+     * 密码
+     */
     private static final String PASSWORD = "tPRVoaQXCDKMLWu+w8LXtqwZ5cXoGTgocCsKVA6eXR8=";
 
     private MqttAsyncClient mThingsboardMqttClient;
-    private static final String TAG = MqttTest.class.getSimpleName();
+    private static final String TAG = "";
     private TextView connectInfo;
 
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            Utils.myLog(msg.obj + "");
+            connectInfo.append(msg.obj + "\n");
+        }
+    };
+
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mqtt_test);
         connectInfo = findViewById(R.id.connect_info);
         initMqtt();
     }
 
-
     @Override
     protected void onStart() {
         super.onStart();
+        gettemp();
         mqttConnect();
     }
 
@@ -65,14 +84,18 @@ public class MqttTest extends BaseActivity {
      * 初始化MQTT
      */
     private void initMqtt() {
+        Message handerMessage = new Message();
         try {
             mThingsboardMqttClient = new MqttAsyncClient(HOST, "esp826_1", new MemoryPersistence());
         } catch (MqttException e) {
-            Log.e("TAG:", "Unable to create MQTT client", e);
+            Utils.myLog("Unable to create MQTT client" + e);
+            handerMessage.obj = "创建MQTT客户端失败";
+            handler.sendMessage(handerMessage);
         }
     }
 
     private void mqttConnect() {
+
         MqttConnectOptions connOpts = new MqttConnectOptions();
         connOpts.setCleanSession(true);
         connOpts.setUserName(USERNAME);
@@ -82,17 +105,23 @@ public class MqttTest extends BaseActivity {
             mThingsboardMqttClient.connect(connOpts, null, new IMqttActionListener() {
                 @Override
                 public void onSuccess(IMqttToken asyncActionToken) {
-                    Log.i(TAG, "MQTT client connected!");
-                    connectInfo.setText("服务器连接成功");
+                    Utils.myLog("MQTT 服务器连接成功");
+                    Message handerMessage = new Message();
+                    handerMessage.obj = "服务器连接成功";
+                    handler.sendMessage(handerMessage);
                     try {
-                        mThingsboardMqttClient.subscribe("v1/devices/me/rpc/request/+", 0);
+                        mThingsboardMqttClient.subscribe("temp/*", 0);
                     } catch (MqttException e) {
-                        Log.e(TAG, "Unable to subscribe to rpc requests topic", e);
+                        Utils.myLog("订阅服务异常" + e);
+                        handerMessage.obj = "订阅服务异常" + e;
+                        handler.sendMessage(handerMessage);
                     }
                     try {
-                        mThingsboardMqttClient.publish("v1/devices/me/attributes", getGpiosStatusMessage());
+                        mThingsboardMqttClient.publish("temp", sendStringMessage("loginSuccess"));
                     } catch (Exception e) {
-                        Log.e(TAG, "Unable to publish GPIO status to Thingsboard server", e);
+                        Utils.myLog("发送消息异常" + e);
+                        handerMessage.obj = "发送消息异常" + e;
+                        handler.sendMessage(handerMessage);
                     }
                 }
 
@@ -100,21 +129,24 @@ public class MqttTest extends BaseActivity {
                 public void onFailure(IMqttToken asyncActionToken, Throwable e) {
                     if (e instanceof MqttException) {
                         MqttException mqttException = (MqttException) e;
-                        Log.e(TAG, String.format("Unable to connect to Thingsboard server: %s, code: %d", mqttException.getMessage(), mqttException.getReasonCode()), e);
-                        connectInfo.setText(String.format("连接异常2: %s, code: %d", mqttException.getMessage(),
-                                mqttException.getReasonCode()));
+                        Utils.myLog(String.format("连接异常2", mqttException.getMessage() + mqttException.getReasonCode()) + e);
+                        Message handerMessage = new Message();
+                        handerMessage.obj = "连接异常2" + mqttException.getMessage();
+                        handler.sendMessage(handerMessage);
 
                     } else {
-                        Log.e(TAG, String.format("Unable to connect to Thingsboard server: %s", e.getMessage()), e);
-                        connectInfo.setText(String.format("连接异常2: %s, code: %d", e.getMessage()));
-
+                        Utils.myLog(String.format("连接异常服务器异常 %s", e.getMessage()) + e);
+                        Message handerMessage = new Message();
+                        handerMessage.obj = "连接异常服务器异常" + e.getMessage();
+                        handler.sendMessage(handerMessage);
                     }
                 }
             });
         } catch (MqttException e) {
-            Log.e(TAG, String.format("Unable to connect to Thingsboard server: %s, code: %d", e.getMessage(), e.getReasonCode()), e);
-            connectInfo.setText(String.format("连接异常1: %s, code: %d", e.getMessage(), e.getReasonCode()));
-
+            Utils.myLog(String.format("Unable to connect to Thingsboard server: %s, code: %d" + e.getMessage() + e.getReasonCode()) + e);
+            Message handerMessage = new Message();
+            handerMessage.obj = "连接异常服务器异常" + e.getMessage();
+            handler.sendMessage(handerMessage);
         }
     }
 
@@ -122,15 +154,21 @@ public class MqttTest extends BaseActivity {
 
         @Override
         public void connectionLost(Throwable e) {
-            Log.e(TAG, "Disconnected from Thingsboard server", e);
+            Utils.myLog("Disconnected from Thingsboard server" + e);
+            Message handerMessage = new Message();
+            handerMessage.obj = "连接异常服务器异常" + e.getMessage();
+            handler.sendMessage(handerMessage);
         }
 
         @Override
         public void messageArrived(String topic, MqttMessage message) throws Exception {
-            Log.d(TAG, String.format("Received message from topic [%s]", topic));
-            String requestId = topic.substring("v1/devices/me/rpc/request/".length());
+            Utils.myLog(String.format("Received message from topic [%s]", topic));
+            Message handerMessage = new Message();
+            handerMessage.obj = "topic" + topic + message.toString();
+            handler.sendMessage(handerMessage);
+         /*   String requestId = topic.substring("v1/devices/me/rpc/request/".length());
             JSONObject messageData = new JSONObject(new String(message.getPayload()));
-            Log.e("message", messageData.toString());
+            Utils.myLog("message", messageData.toString());
             String method = messageData.getString("method");
             if (method != null) {
                 if (method.equals("getGpioStatus")) {
@@ -146,13 +184,21 @@ public class MqttTest extends BaseActivity {
                     //Client acts as an echo service
                     mThingsboardMqttClient.publish("v1/devices/me/rpc/response/" + requestId, message);
                 }
-            }
+            }*/
         }
 
         @Override
         public void deliveryComplete(IMqttDeliveryToken token) {
+            Message handerMessage = new Message();
+            handerMessage.obj = "消息发送完成";
+
         }
     };
+
+    private MqttMessage sendStringMessage(String stringMessage) throws Exception {
+        MqttMessage message = new MqttMessage(stringMessage.getBytes());
+        return message;
+    }
 
     private MqttMessage getGpiosStatusMessage() throws Exception {
         JSONObject gpioStatus = new JSONObject();
@@ -187,10 +233,27 @@ public class MqttTest extends BaseActivity {
     private void mqttDisconnect() {
         try {
             mThingsboardMqttClient.disconnect();
-            Log.i(TAG, "MQTT client disconnected!");
+            Utils.myLog("MQTT client disconnected!");
         } catch (MqttException e) {
-            Log.e(TAG, "Unable to disconnect from the Thingsboard server", e);
+            Utils.myLog("Unable to disconnect from the Thingsboard server" + e);
         }
     }
 
+
+    public void gettemp() {
+        timedTask(1, new Runnable() {
+            @Override
+            public void run() {
+                JSONObject jsonObject = new JSONObject();
+                try {
+                    String temperatureJSON = jsonObject.put("temperature", WriteReadADBShell.getCPUTemp()).toString();
+                    MqttMessage mqttMessage = new MqttMessage(temperatureJSON.getBytes());
+                    //  ttsOutput.startPlaySuond(temp+"", GpioControlActivity.this);
+                    mThingsboardMqttClient.publish("temp/", mqttMessage);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
 }

@@ -1,6 +1,7 @@
 package org.thingsboard.sample.gpiocontrol.activity;
 
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.widget.TextView;
 
 import org.thingsboard.sample.gpiocontrol.R;
@@ -43,5 +44,11 @@ public class TimeActivity extends BaseActivity {
                 });
             }
         });
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        this.finish();
+        return super.onTouchEvent(event);
     }
 }
