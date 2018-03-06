@@ -124,7 +124,6 @@ public class MqttTest extends BaseActivity {
                         handler.sendMessage(handerMessage);
                     }
                 }
-
                 @Override
                 public void onFailure(IMqttToken asyncActionToken, Throwable e) {
                     if (e instanceof MqttException) {
