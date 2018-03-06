@@ -2087,6 +2087,8 @@ public final class R {
   public static final class font {
     public static final int msyh=0x7f070000;
     public static final int msyh_font=0x7f070001;
+    public static final int rbks=0x7f070002;
+    public static final int yygx=0x7f070003;
   }
   public static final class id {
     public static final int action0=0x7f080000;

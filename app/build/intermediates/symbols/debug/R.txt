@@ -585,6 +585,8 @@ int drawable notification_tile_bg 0x7f06005e
 int drawable notify_panel_notification_icon_bg 0x7f06005f
 int font msyh 0x7f070000
 int font msyh_font 0x7f070001
+int font rbks 0x7f070002
+int font yygx 0x7f070003
 int id action0 0x7f080000
 int id action_bar 0x7f080001
 int id action_bar_activity_content 0x7f080002
