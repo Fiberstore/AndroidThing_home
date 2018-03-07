@@ -39,10 +39,6 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.GET_TASKS" />
 
-    <meta-data
-        android:name="android.support.VERSION"
-        android:value="26.0.0-alpha1" />
-
     <application
         android:name="org.thingsboard.sample.gpiocontrol.application.MyApplication"
         android:allowBackup="true"
@@ -71,6 +67,10 @@
         <activity android:name="org.thingsboard.sample.gpiocontrol.activity.TimeActivity" />
         <activity android:name="org.thingsboard.sample.gpiocontrol.activity.GpioControlActivity" />
         <activity android:name="org.thingsboard.sample.gpiocontrol.activity.NewActivity" />
+
+        <meta-data
+            android:name="android.support.VERSION"
+            android:value="26.0.0-beta1" />
     </application>
 
 </manifest>
