@@ -370,16 +370,18 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
     @Override
     public void setTimeState(boolean state) {
         SimpleDateFormat hourformatter = new SimpleDateFormat("HH:mm:ss", Locale.CHINESE);
-        timedTask(1, new Runnable() {
+        hourformatter.setTimeZone(TimeZone.getTimeZone("GMT+08:00"));
+
+        Log.e("11", "设置时间成功");
+      /*  timedTask(1, new Runnable() {
             @Override
-            public void run() {
-                Log.e("vvvv", "1111");
-                // hourformatter.setTimeZone(TimeZone.getTimeZone("GMT+08:00"));
-                // Calendar calendar = Calendar.getInstance();
-                // long timeInMillis = calendar.getTimeInMillis();
-                // final String format = hourformatter.format(timeInMillis);
-                //  timeTextview.setText(new );
-            }
-        });
+            public void run() {*/
+        Log.e("vvvv", "1111");
+        Calendar calendar = Calendar.getInstance();
+        long timeInMillis = calendar.getTimeInMillis();
+        String format = hourformatter.format(timeInMillis);
+        timeTextview.setText(format);
+        /*    }
+        });*/
     }
 }

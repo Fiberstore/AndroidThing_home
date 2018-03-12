@@ -80,7 +80,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_toRightOf="@+id/weather_today_info_textview"
                     android:fontFamily="@font/msyh"
-                    android:text="21:55:36"
+                    android:text="--:--:--"
                     android:textColor="@color/col_f89406"
                     android:textSize="30sp"/>
             </LinearLayout>
