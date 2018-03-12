@@ -2,9 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@color/col_7D7A7A"
+              android:background="@drawable/home_backgrounds"
               android:orientation="horizontal">
-
 
     <RelativeLayout
         android:layout_width="0dp"
@@ -28,31 +27,105 @@
                 android:id="@+id/template_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/image_today_weather_icon"
-                android:text="0℃"
+                android:fontFamily="@font/msyh"
+                android:text="0"
                 android:textColor="@color/col_f89406"
                 android:textSize="50sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="18dp"
+                android:layout_toRightOf="@+id/template_textview"
+                android:fontFamily="@font/msyh"
+                android:text="℃"
+                android:textColor="@color/col_f89406"
+                android:textSize="35sp"/>
+
+            <TextView
+                android:id="@+id/location_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/template_textview"
+                android:layout_marginRight="20dp"
+                android:layout_toRightOf="@+id/image_today_weather_icon"
+                android:fontFamily="@font/msyh"
+                android:text="位置"
+                android:textColor="@color/col_f89406"
+                android:textSize="30sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image_today_weather_icon">
+
+                <TextView
+                    android:id="@+id/weather_today_info_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/msyh"
+                    android:text="多云"
+                    android:textColor="@color/col_f89406"
+                    android:textSize="30sp"/>
+
+                <TextView
+                    android:id="@+id/time_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/location_textview"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/weather_today_info_textview"
+                    android:fontFamily="@font/msyh"
+                    android:text="21:55:36"
+                    android:textColor="@color/col_f89406"
+                    android:textSize="30sp"/>
+            </LinearLayout>
+
         </RelativeLayout>
 
         <View
-            android:layout_width="10dp"
+            android:layout_width="8dp"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-            android:background="@color/col_666666"/>
+            android:background="@color/col_afafaf"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/weather_rela"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="10dp"
+                android:layout_height="8dp"
                 android:layout_alignParentRight="true"
-                android:background="@color/col_666666"/>
+                android:background="@color/col_afafaf"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:fontFamily="@font/msyh"
+                    android:id="@+id/blueToothState_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <Button
+                    android:fontFamily="@font/msyh"
+                    android:id="@+id/getBlueToothDevice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="获取蓝牙设备"
+                    />
+
+            </RelativeLayout>
 
         </LinearLayout>
 

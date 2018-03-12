@@ -1,4 +1,14 @@
-<resources>
+<resources >
 
+    <style name="tv_style1">
+        <item name="android:textSize">45sp</item>
+        <item name="android:textColor">@color/col_f89406</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
+    <style name="tv_style2">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/col_f89406</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

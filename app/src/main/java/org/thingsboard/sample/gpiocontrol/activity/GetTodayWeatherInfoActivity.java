@@ -1,9 +1,11 @@
 package org.thingsboard.sample.gpiocontrol.activity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.things.device.TimeManager;
 import com.google.gson.Gson;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -12,31 +14,57 @@ import org.thingsboard.sample.gpiocontrol.R;
 import org.thingsboard.sample.gpiocontrol.base.BaseActivity;
 import org.thingsboard.sample.gpiocontrol.bean.WeatherInfoBean;
 import org.thingsboard.sample.gpiocontrol.constant.ServerUrl;
+import org.thingsboard.sample.gpiocontrol.util.GetInternetTime;
+import org.thingsboard.sample.gpiocontrol.util.GetInternetTimeInMillisAnsy;
 import org.thingsboard.sample.gpiocontrol.util.ShowImage;
 import org.thingsboard.sample.gpiocontrol.util.Utils;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+import java.util.TimeZone;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 import okhttp3.Call;
 
 /**
  * Created by zhangxiang on 2018/3/9.
  */
 
-public class GetTodayWeatherInfoActivity extends BaseActivity {
-
+public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInternetTimeInMillisAnsy.SetTimeStateInterface {
 
     @InjectView(R.id.image_today_weather_icon)
     ImageView imageTodayWeatherIcon;
     @InjectView(R.id.template_textview)
     TextView templateTextview;
+    @InjectView(R.id.location_textview)
+    TextView locationTextview;
+    @InjectView(R.id.time_textview)
+    TextView timeTextview;
+    @InjectView(R.id.weather_today_info_textview)
+    TextView weatherTodayInfoTextview;
+    @InjectView(R.id.blueToothState_textview)
+    TextView blueToothStateTextview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather_info);
         ButterKnife.inject(this);
+        setTimerInfo();
         getWeatherInfo();
+
+    }
+
+    /**
+     * 设置时间信息
+     */
+    private void setTimerInfo() {
+
+        GetInternetTimeInMillisAnsy getInternetTimeInMillisAnsy = new GetInternetTimeInMillisAnsy(this);
+        getInternetTimeInMillisAnsy.execute("");
     }
 
     private void getWeatherInfo() {
@@ -65,13 +93,15 @@ public class GetTodayWeatherInfoActivity extends BaseActivity {
      * 设置UI信息
      */
     private void setUiinfo(WeatherInfoBean weatherInfoBean) {
-
+        //setTimeInfo();
         switch (weatherInfoBean.getStatus()) {
             /**正常*/
             case "0":
                 WeatherInfoBean.ResultBean weatherInfoBeanResult = weatherInfoBean.getResult();
-                setWeatherInfo(weatherInfoBeanResult.getImg());
+                //setWeatherInfo(weatherInfoBeanResult.getImg());
                 setTemplate(weatherInfoBeanResult.getTemp());
+                setLocationInfo(weatherInfoBeanResult.getCity());
+                setTodayWeatherInfo(weatherInfoBeanResult.getWeather());
                 break;
             /**城市和城市ID和城市代号都为空*/
             case "201":
@@ -89,12 +119,39 @@ public class GetTodayWeatherInfoActivity extends BaseActivity {
         }
     }
 
+    private void setTodayWeatherInfo(String weather) {
+
+        weatherTodayInfoTextview.setText(weather);
+    }
+
+    /**
+     * 设置时间信息
+     */
+    private void setTimeInfo() {
+        timedTask(1, new Runnable() {
+            @Override
+            public void run() {
+                final String formatTime = GetInternetTime.getFormatTimeHour();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        timeTextview.setText(formatTime);
+                    }
+                });
+            }
+        });
+    }
+
+    private void setLocationInfo(String city) {
+
+        locationTextview.setText(city);
+    }
+
     /**
      * 设置温度
      */
     private void setTemplate(String temp) {
-        templateTextview.setText(temp + "℃");
-
+        templateTextview.setText(temp);
     }
 
     /**
@@ -302,5 +359,27 @@ public class GetTodayWeatherInfoActivity extends BaseActivity {
                 ShowImage.showImage(this, iconArray[47], imageTodayWeatherIcon);
                 break;
         }
+    }
+
+    @OnClick(R.id.getBlueToothDevice)
+    public void onViewClicked() {
+
+
+    }
+
+    @Override
+    public void setTimeState(boolean state) {
+        SimpleDateFormat hourformatter = new SimpleDateFormat("HH:mm:ss", Locale.CHINESE);
+        timedTask(1, new Runnable() {
+            @Override
+            public void run() {
+                Log.e("vvvv", "1111");
+                // hourformatter.setTimeZone(TimeZone.getTimeZone("GMT+08:00"));
+                // Calendar calendar = Calendar.getInstance();
+                // long timeInMillis = calendar.getTimeInMillis();
+                // final String format = hourformatter.format(timeInMillis);
+                //  timeTextview.setText(new );
+            }
+        });
     }
 }

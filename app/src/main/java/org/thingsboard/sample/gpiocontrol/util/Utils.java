@@ -6,9 +6,16 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.PowerManager;
 import android.provider.Settings;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextUtils;
+import android.text.style.TextAppearanceSpan;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
+
+import org.thingsboard.sample.gpiocontrol.R;
 
 /**
  * @author 作者：张祥 on 2018/3/5 0005.
@@ -62,9 +69,9 @@ public class Utils {
      *
      * @param brightness
      */
-    public  static void changeAppBrightness(Activity activity, int brightness) {
+    public static void changeAppBrightness(Activity activity, int brightness) {
 
-        myLog(brightness+"");
+        myLog(brightness + "");
         Window window = activity.getWindow();
         WindowManager.LayoutParams lp = window.getAttributes();
         if (brightness == -1) {
@@ -81,8 +88,26 @@ public class Utils {
 //        activity.getContentResolver().notifyChange(uri, null);
 //    }
 
-    /**自定义LOG*/
+    /**
+     * 自定义LOG
+     */
     public static void myLog(String logInfo) {
         Log.e("-----------MQTT-------------", logInfo);
+    }
+
+    public static void setWeatherTextViewSize(Context context, String info, TextView textView) {
+
+        if(!TextUtils.isEmpty(info)){
+            info=info+"℃";
+        }
+
+        SpannableString ss = new SpannableString(info);
+        ss.setSpan(new TextAppearanceSpan(context, R.style.tv_style1), 0,  info.length()-1,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(new TextAppearanceSpan(context, R.style.tv_style2),  info.length()-1,
+                info.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        textView.setText(ss, TextView.BufferType.SPANNABLE);
+
     }
 }

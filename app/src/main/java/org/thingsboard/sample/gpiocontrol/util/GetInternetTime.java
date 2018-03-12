@@ -3,6 +3,7 @@ package org.thingsboard.sample.gpiocontrol.util;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Locale;
 import java.util.TimeZone;
 
@@ -14,7 +15,7 @@ public class GetInternetTime {
     private static long ucDate;
 
     private static SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日HH:mm:ss", Locale.CHINESE);
-    private static SimpleDateFormat hourformatter = new SimpleDateFormat("HH-mm-ss", Locale.CHINESE);
+    private static SimpleDateFormat hourformatter = new SimpleDateFormat("HH:mm:ss", Locale.CHINESE);
     private static SimpleDateFormat weekformatter = new SimpleDateFormat("EEEE", Locale.CHINESE);
 
     public GetInternetTime() {
@@ -39,12 +40,25 @@ public class GetInternetTime {
         return time;
     }
 
-    /**获取当前的周*/
+    /**
+     * 获取当前的周
+     */
     public static String getWeek() {
         hourformatter.setTimeZone(TimeZone.getTimeZone("GMT+08:00"));
         String week = weekformatter.format(GetInternetTime.getInternetTime());
         return week;
     }
+
+    /**
+     * 判断当前是否是整点
+     */
+ /*   public static void currentIsTheWholePointOf() {
+        if( (hourformatter(Calendar.MINUTE)==0) && (gc.get(Calendar.SECOND)==0) ) {
+            System.out.println("整点");
+        }
+        else
+            System.out.println("不是整点");
+    }*/
 
     /**
      * 获取互联网时间
@@ -57,7 +71,7 @@ public class GetInternetTime {
             uc.connect(); //发出连接
             //取得网站日期时间
             ucDate = uc.getDate();
-            Utils.myLog(ucDate+"");
+            Utils.myLog(ucDate + "");
         } catch (Exception e) {
             e.printStackTrace();
             Utils.myLog("获取网络时间异常");
