@@ -19,7 +19,6 @@ public class GetInternetTime {
 
     public GetInternetTime() {
         super();
-
     }
 
     /**
@@ -32,7 +31,7 @@ public class GetInternetTime {
     }
 
     /**
-     * 获取当前时间
+     * 获取当前小时
      */
     public static String getFormatTimeHour() {
         hourformatter.setTimeZone(TimeZone.getTimeZone("GMT+08:00"));
@@ -40,6 +39,7 @@ public class GetInternetTime {
         return time;
     }
 
+    /**获取当前的周*/
     public static String getWeek() {
         hourformatter.setTimeZone(TimeZone.getTimeZone("GMT+08:00"));
         String week = weekformatter.format(GetInternetTime.getInternetTime());
@@ -57,8 +57,10 @@ public class GetInternetTime {
             uc.connect(); //发出连接
             //取得网站日期时间
             ucDate = uc.getDate();
+            Utils.myLog(ucDate+"");
         } catch (Exception e) {
             e.printStackTrace();
+            Utils.myLog("获取网络时间异常");
         }
         return ucDate;
     }

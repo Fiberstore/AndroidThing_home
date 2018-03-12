@@ -15,15 +15,15 @@
         android:textSize="60sp"/>
 
     <TextView
-        android:textColor="@color/white"
+        android:id="@+id/week_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/week_textview"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
         android:layout_marginBottom="40dp"
         android:layout_marginRight="70dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
         android:fontFamily="@font/msyh"
+        android:textColor="@color/white"
         android:textSize="40sp"/>
 
 </RelativeLayout>

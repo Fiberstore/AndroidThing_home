@@ -38,6 +38,9 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="com.google.android.things.permission.CHANGE_TIME" />
+    <!-- 设置屏幕亮度 -->
+    <uses-permission android:name="com.google.android.things.permission.MODIFY_SCREEN_SETTINGS" />
 
     <application
         android:name="org.thingsboard.sample.gpiocontrol.application.MyApplication"
@@ -45,11 +48,10 @@
         android:debuggable="true"
         android:icon="@android:drawable/sym_def_app_icon"
         android:label="@string/app_name"
-        android:testOnly="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
         <uses-library android:name="com.google.android.things" />
 
-        <activity android:name="org.thingsboard.sample.gpiocontrol.activity.MqttTest" >
+        <activity android:name="org.thingsboard.sample.gpiocontrol.activity.GetTodayWeatherInfoActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -64,7 +66,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="org.thingsboard.sample.gpiocontrol.activity.TimeActivity" />
         <activity android:name="org.thingsboard.sample.gpiocontrol.activity.GpioControlActivity" />
         <activity android:name="org.thingsboard.sample.gpiocontrol.activity.NewActivity" />
 

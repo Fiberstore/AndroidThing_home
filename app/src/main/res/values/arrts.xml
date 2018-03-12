@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <integer-array  name="weather_icon_array" >
+        <item>@drawable/w_0_sun</item>
+        <item>@drawable/w_1_duoyun</item>
+        <item>@drawable/w_2_ying</item>
+        <item>@drawable/w_3_zhenyu</item>
+        <item>@drawable/w_4_leizhenyu</item>
+        <item>@drawable/w_5_leizhenyu_bingbao</item>
+        <item>@drawable/w_6_yujiaxue</item>
+        <item>@drawable/w_7_xiaoyu</item>
+        <item>@drawable/w_8_zhongyu</item>
+        <item>@drawable/w_9_dayu</item>
+        <item>@drawable/w_10_baoyu</item>
+        <item>@drawable/w_11_dabaoyu</item>
+        <item>@drawable/w_12_tedabaoyu</item>
+        <item>@drawable/w_13_zhenxue</item>
+        <item>@drawable/w_14_xiaoxue</item>
+        <item>@drawable/w_15_zhongxue</item>
+        <item>@drawable/w_16_daxue</item>
+        <item>@drawable/w_17_baoxue</item>
+        <item>@drawable/w_18_wu</item>
+        <item>@drawable/w_19_dongyu</item>
+        <item>@drawable/w_20_shachengbao</item>
+        <item>@drawable/w_21_xiaoyu_zhonyu</item>
+        <item>@drawable/w_22_zhongyu_dayu</item>
+        <item>@drawable/w_23_dayu_baoyu</item>
+        <item>@drawable/w_24_baoyu_dabaoyu</item>
+        <item>@drawable/w_25_dabao_tedabaoyu</item>
+        <item>@drawable/w_26_xiaoxue_zhongxue</item>
+        <item>@drawable/w_27_zhongxue_daxue</item>
+        <item>@drawable/w_28_daxue_baoxue</item>
+        <item>@drawable/w_29_fucheng</item>
+        <item>@drawable/w_30_yangchen</item>
+        <item>@drawable/w_31_qiangshachen</item>
+        <item>@drawable/w_32_nongwu</item>
+        <item>@drawable/w_39_taifeng</item>
+        <item>@drawable/w_49_qiangnongwu</item>
+        <item>@drawable/w_53_mai</item>
+        <item>@drawable/w_54_zhongdumai</item>
+        <item>@drawable/w_55_zzhongdumai</item>
+        <item>@drawable/w_56_yanzhongmai</item>
+        <item>@drawable/w_57_dawu</item>
+        <item>@drawable/w_58_tedanongwu</item>
+        <item>@drawable/w_99_non</item>
+        <item>@drawable/w_301_yu</item>
+        <item>@drawable/w_302_xue</item>
+    </integer-array>
+
+
+</resources>
