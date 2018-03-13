@@ -115,7 +115,7 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
             /**正常*/
             case "0":
                 WeatherInfoBean.ResultBean weatherInfoBeanResult = weatherInfoBean.getResult();
-                //setWeatherInfo(weatherInfoBeanResult.getImg());
+                setWeatherInfo(weatherInfoBeanResult.getImg());
                 setTemplate(weatherInfoBeanResult.getTemp());
                 setLocationInfo(weatherInfoBeanResult.getCity());
                 setTodayWeatherInfo(weatherInfoBeanResult.getWeather());
@@ -133,7 +133,6 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
             /**没有信息*/
             case "210":
                 break;
-
         }
     }
 
@@ -166,23 +165,7 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
         weatherTodayInfoTextview.setText(weather);
     }
 
-    /**
-     * 设置时间信息
-     */
-/*    private void setTimeInfo() {
-        timedTask(1, new Runnable() {
-            @Override
-            public void run() {
-                final String formatTime = GetInternetTime.getFormatTimeHour();
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        timeTextview.setText(formatTime);
-                    }
-                });
-            }
-        });
-    }*/
+
     private void setLocationInfo(String city) {
 
         locationTextview.setText(city);
