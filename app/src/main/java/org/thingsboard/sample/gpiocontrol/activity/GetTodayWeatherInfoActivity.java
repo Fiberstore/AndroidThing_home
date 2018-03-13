@@ -2,8 +2,8 @@ package org.thingsboard.sample.gpiocontrol.activity;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -63,6 +63,8 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
     TextView motionIndex_textview;
     @InjectView(R.id.date_textview)
     TextView dateTextview;
+    @InjectView(R.id.weatherParameter_scollview)
+    ScrollView weatherParameterScollview;
     private CountDownTimer cdTimer;
 
     @Override
@@ -155,6 +157,8 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
         updataTimeTextview.setText(weatherInfoBeanResult.getUpdatetime());
         /**设置运动指数*/
         motionIndex_textview.setText(weatherInfoBeanResult.getIndex().get(1).getDetail());
+        /**更新时刷新至顶部*/
+        weatherParameterScollview.fullScroll(ScrollView.FOCUS_UP);
     }
 
     private void setTodayWeatherInfo(String weather) {
