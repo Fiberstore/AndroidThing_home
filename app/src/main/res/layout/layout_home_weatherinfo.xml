@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/msyh"
+                android:text="日期："
+                android:textSize="20sp"
+                android:textColor="@color/col_f89406"/>
+
+            <TextView
+                android:id="@+id/date_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/msyh"
+                android:text="--：--：--"
+                android:textSize="20sp"
+                android:textColor="@color/col_f89406"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/msyh"
+                android:text="最高温度："
+                android:textSize="20sp"
+                android:textColor="@color/col_f89406"/>
+
+            <TextView
+                android:id="@+id/template_hignt_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/msyh"
+                android:text="--℃"
+                android:textSize="20sp"
+                android:textColor="@color/col_f89406"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="40dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/msyh"
+                android:text="最低温度："
+                android:textSize="20sp"
+                android:textColor="@color/col_f89406"/>
+
+            <TextView
+                android:id="@+id/template_low_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/msyh"
+                android:text="--℃"
+                android:textSize="20sp"
+                android:textColor="@color/col_f89406"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/msyh"
+                android:text="风向："
+                android:textSize="20sp"
+                android:textColor="@color/col_f89406"/>
+
+            <TextView
+                android:id="@+id/windDirection_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/msyh"
+                android:text="无数据"
+                android:textSize="20sp"
+                android:textColor="@color/col_f89406"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/msyh"
+                android:text="风力等级："
+                android:textSize="20sp"
+                android:textColor="@color/col_f89406"/>
+
+            <TextView
+                android:id="@+id/windGrade_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/msyh"
+                android:text="无数据"
+                android:textSize="20sp"
+                android:textColor="@color/col_f89406"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/msyh"
+                android:text="湿度："
+                android:textSize="20sp"
+                android:textColor="@color/col_f89406"/>
+
+            <TextView
+                android:id="@+id/humidity_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/msyh"
+                android:text="无数据"
+                android:textSize="20sp"
+                android:textColor="@color/col_f89406"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/msyh"
+                android:text="更新时间："
+                android:textSize="20sp"
+                android:textColor="@color/col_f89406"/>
+
+            <TextView
+                android:id="@+id/updata_time_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/msyh"
+                android:text="无数据"
+                android:textSize="15sp"
+                android:textColor="@color/col_f89406"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/msyh"
+                android:text="运动指数："
+                android:textSize="20sp"
+                android:textColor="@color/col_f89406"/>
+
+            <TextView
+                android:id="@+id/motionIndex_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/msyh"
+                android:text="无数据"
+                android:textSize="10sp"
+                android:textColor="@color/col_f89406"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

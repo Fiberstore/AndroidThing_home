@@ -4,6 +4,8 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.TimeZone;
 
@@ -11,23 +13,20 @@ import java.util.TimeZone;
  * Created by zhangxiang on 2018/3/4.
  */
 
-public class GetInternetTime {
+public class TimeUtils {
     private static long ucDate;
 
     private static SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日HH:mm:ss", Locale.CHINESE);
     private static SimpleDateFormat hourformatter = new SimpleDateFormat("HH:mm:ss", Locale.CHINESE);
     private static SimpleDateFormat weekformatter = new SimpleDateFormat("EEEE", Locale.CHINESE);
 
-    public GetInternetTime() {
-        super();
-    }
 
     /**
      * 获取当前时间
      */
     public static String getFormatTime() {
         formatter.setTimeZone(TimeZone.getTimeZone("GMT+08:00"));
-        String time = formatter.format(GetInternetTime.getInternetTime());
+        String time = formatter.format(getInternetTime());
         return time;
     }
 
@@ -36,7 +35,7 @@ public class GetInternetTime {
      */
     public static String getFormatTimeHour() {
         hourformatter.setTimeZone(TimeZone.getTimeZone("GMT+08:00"));
-        String time = hourformatter.format(GetInternetTime.getInternetTime());
+        String time = hourformatter.format(getInternetTime());
         return time;
     }
 
@@ -45,20 +44,20 @@ public class GetInternetTime {
      */
     public static String getWeek() {
         hourformatter.setTimeZone(TimeZone.getTimeZone("GMT+08:00"));
-        String week = weekformatter.format(GetInternetTime.getInternetTime());
+        String week = weekformatter.format(getInternetTime());
         return week;
     }
 
     /**
      * 判断当前是否是整点
      */
- /*   public static void currentIsTheWholePointOf() {
-        if( (hourformatter(Calendar.MINUTE)==0) && (gc.get(Calendar.SECOND)==0) ) {
-            System.out.println("整点");
+    public static boolean currentIsTheWholePointOf(Calendar calendar) {
+        if ((calendar.get(calendar.MINUTE) == 0) && (calendar.get(calendar.SECOND) == 0)) {
+            return true;
+        } else {
+            return false;
         }
-        else
-            System.out.println("不是整点");
-    }*/
+    }
 
     /**
      * 获取互联网时间

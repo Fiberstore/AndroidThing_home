@@ -1,8 +1,8 @@
 package org.thingsboard.sample.gpiocontrol.activity;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.CountDownTimer;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,11 +14,10 @@ import org.thingsboard.sample.gpiocontrol.R;
 import org.thingsboard.sample.gpiocontrol.base.BaseActivity;
 import org.thingsboard.sample.gpiocontrol.bean.WeatherInfoBean;
 import org.thingsboard.sample.gpiocontrol.constant.ServerUrl;
-import org.thingsboard.sample.gpiocontrol.util.GetInternetTime;
 import org.thingsboard.sample.gpiocontrol.util.GetInternetTimeInMillisAnsy;
 import org.thingsboard.sample.gpiocontrol.util.ShowImage;
+import org.thingsboard.sample.gpiocontrol.util.TimeUtils;
 import org.thingsboard.sample.gpiocontrol.util.Utils;
-import org.thingsboard.sample.gpiocontrol.widget.TextViewClock;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -46,8 +45,25 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
     TextView weatherTodayInfoTextview;
     @InjectView(R.id.blueToothState_textview)
     TextView blueToothStateTextview;
-    @InjectView(R.id.time_textviewClock)
-    TextViewClock timeTextviewClock;
+    @InjectView(R.id.timeTextview)
+    TextView timeTextview;
+    @InjectView(R.id.template_hignt_textview)
+    TextView templateHigntTextview;
+    @InjectView(R.id.template_low_textview)
+    TextView templateLowTextview;
+    @InjectView(R.id.windDirection_textview)
+    TextView windDirectionTextview;
+    @InjectView(R.id.windGrade_textview)
+    TextView windGradeTextview;
+    @InjectView(R.id.humidity_textview)
+    TextView humidityTextview;
+    @InjectView(R.id.updata_time_textview)
+    TextView updataTimeTextview;
+    @InjectView(R.id.motionIndex_textview)
+    TextView motionIndex_textview;
+    @InjectView(R.id.date_textview)
+    TextView dateTextview;
+    private CountDownTimer cdTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +72,6 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
         ButterKnife.inject(this);
         setTimerInfo();
         getWeatherInfo();
-
     }
 
     /**
@@ -94,7 +109,6 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
      * 设置UI信息
      */
     private void setUiinfo(WeatherInfoBean weatherInfoBean) {
-        //setTimeInfo();
         switch (weatherInfoBean.getStatus()) {
             /**正常*/
             case "0":
@@ -103,6 +117,7 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
                 setTemplate(weatherInfoBeanResult.getTemp());
                 setLocationInfo(weatherInfoBeanResult.getCity());
                 setTodayWeatherInfo(weatherInfoBeanResult.getWeather());
+                setWeatherParameterInfo(weatherInfoBeanResult);
                 break;
             /**城市和城市ID和城市代号都为空*/
             case "201":
@@ -118,6 +133,28 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
                 break;
 
         }
+    }
+
+    /**
+     * 设置天气参数信息
+     */
+    private void setWeatherParameterInfo(WeatherInfoBean.ResultBean weatherInfoBeanResult) {
+        /**设置日期*/
+        dateTextview.setText(weatherInfoBeanResult.getDate());
+        /**设置最高温度*/
+        templateHigntTextview.setText(weatherInfoBeanResult.getTemphigh());
+        /**设置最低温度*/
+        templateLowTextview.setText(weatherInfoBeanResult.getTemplow());
+        /**设置风向*/
+        windDirectionTextview.setText(weatherInfoBeanResult.getWinddirect());
+        /**设置风力等级*/
+        windGradeTextview.setText(weatherInfoBeanResult.getWindpower());
+        /**设置湿度数据*/
+        humidityTextview.setText(weatherInfoBeanResult.getHumidity());
+        /**设置天气数据更新时间*/
+        updataTimeTextview.setText(weatherInfoBeanResult.getUpdatetime());
+        /**设置运动指数*/
+        motionIndex_textview.setText(weatherInfoBeanResult.getIndex().get(1).getDetail());
     }
 
     private void setTodayWeatherInfo(String weather) {
@@ -142,7 +179,6 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
             }
         });
     }*/
-
     private void setLocationInfo(String city) {
 
         locationTextview.setText(city);
@@ -368,24 +404,36 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
 
     }
 
+
+    /**
+     * 获取网络时间并设置日历成功的回调
+     */
     @Override
     public void setTimeState(boolean state) {
 
-        Typeface typeface = Typeface.createFromAsset(this.getAssets(), "fonts/msyh.ttf");
-        timeTextviewClock.setFontTypeface(typeface);
-
-        Log.e("11", "设置时间成功");
-       /* timedTask(1, new Runnable() {
+        /**倒计时方法*/
+        cdTimer = new CountDownTimer(60000 * 24, 500) {
             @Override
-            public void run() {
-                Log.e("vvvv", "1111");
+            public void onTick(long l) {
+
                 SimpleDateFormat hourformatter = new SimpleDateFormat("HH:mm:ss", Locale.CHINESE);
                 hourformatter.setTimeZone(TimeZone.getTimeZone("GMT+08:00"));
                 Calendar calendar = Calendar.getInstance();
                 long timeInMillis = calendar.getTimeInMillis();
                 String format = hourformatter.format(timeInMillis);
-             //   timeTextview.setText(format);
+                timeTextview.setText(format);
+                /**如果是整点*/
+                if (TimeUtils.currentIsTheWholePointOf(calendar)) {
+                    /**如果是整点刷新天气*/
+                    getWeatherInfo();
+                }
             }
-        });*/
+
+            @Override
+            public void onFinish() {
+                cdTimer.start();
+            }
+        };
+        cdTimer.start();
     }
 }

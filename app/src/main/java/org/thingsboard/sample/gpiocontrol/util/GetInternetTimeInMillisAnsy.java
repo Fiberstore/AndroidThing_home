@@ -37,7 +37,7 @@ public class GetInternetTimeInMillisAnsy extends AsyncTask<String, Integer, Bool
             TimeManager timeManager = TimeManager.getInstance();
             timeManager.setTimeFormat(TimeManager.FORMAT_12);
             Calendar calendar = Calendar.getInstance();
-            calendar.setTimeInMillis(GetInternetTime.getInternetTime());
+            calendar.setTimeInMillis(TimeUtils.getInternetTime());
             long timeStamp = calendar.getTimeInMillis();
             timeManager.setTime(timeStamp);
             return true;

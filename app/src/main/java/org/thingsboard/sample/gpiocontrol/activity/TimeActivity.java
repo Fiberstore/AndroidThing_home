@@ -10,7 +10,7 @@ import com.google.android.things.device.ScreenManager;
 
 import org.thingsboard.sample.gpiocontrol.R;
 import org.thingsboard.sample.gpiocontrol.base.BaseActivity;
-import org.thingsboard.sample.gpiocontrol.util.GetInternetTime;
+import org.thingsboard.sample.gpiocontrol.util.TimeUtils;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -42,8 +42,8 @@ public class TimeActivity extends BaseActivity {
         timedTask(1, new Runnable() {
             @Override
             public void run() {
-                final String formatTime = GetInternetTime.getFormatTimeHour();
-                final String week = GetInternetTime.getWeek();
+                final String formatTime = TimeUtils.getFormatTimeHour();
+                final String week = TimeUtils.getWeek();
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
