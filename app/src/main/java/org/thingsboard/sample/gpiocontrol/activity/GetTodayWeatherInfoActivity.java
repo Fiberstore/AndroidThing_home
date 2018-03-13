@@ -1,11 +1,11 @@
 package org.thingsboard.sample.gpiocontrol.activity;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.things.device.TimeManager;
 import com.google.gson.Gson;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -18,6 +18,7 @@ import org.thingsboard.sample.gpiocontrol.util.GetInternetTime;
 import org.thingsboard.sample.gpiocontrol.util.GetInternetTimeInMillisAnsy;
 import org.thingsboard.sample.gpiocontrol.util.ShowImage;
 import org.thingsboard.sample.gpiocontrol.util.Utils;
+import org.thingsboard.sample.gpiocontrol.widget.TextViewClock;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -41,12 +42,12 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
     TextView templateTextview;
     @InjectView(R.id.location_textview)
     TextView locationTextview;
-    @InjectView(R.id.time_textview)
-    TextView timeTextview;
     @InjectView(R.id.weather_today_info_textview)
     TextView weatherTodayInfoTextview;
     @InjectView(R.id.blueToothState_textview)
     TextView blueToothStateTextview;
+    @InjectView(R.id.time_textviewClock)
+    TextViewClock timeTextviewClock;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,7 +128,7 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
     /**
      * 设置时间信息
      */
-    private void setTimeInfo() {
+/*    private void setTimeInfo() {
         timedTask(1, new Runnable() {
             @Override
             public void run() {
@@ -140,7 +141,7 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
                 });
             }
         });
-    }
+    }*/
 
     private void setLocationInfo(String city) {
 
@@ -370,8 +371,11 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
     @Override
     public void setTimeState(boolean state) {
 
+        Typeface typeface = Typeface.createFromAsset(this.getAssets(), "fonts/msyh.ttf");
+        timeTextviewClock.setFontTypeface(typeface);
+
         Log.e("11", "设置时间成功");
-        timedTask(1, new Runnable() {
+       /* timedTask(1, new Runnable() {
             @Override
             public void run() {
                 Log.e("vvvv", "1111");
@@ -380,8 +384,8 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
                 Calendar calendar = Calendar.getInstance();
                 long timeInMillis = calendar.getTimeInMillis();
                 String format = hourformatter.format(timeInMillis);
-                timeTextview.setText(format);
+             //   timeTextview.setText(format);
             }
-        });
+        });*/
     }
 }

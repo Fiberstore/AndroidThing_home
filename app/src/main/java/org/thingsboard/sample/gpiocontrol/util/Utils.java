@@ -6,6 +6,8 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.PowerManager;
 import android.provider.Settings;
+import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextUtils;
@@ -17,6 +19,8 @@ import android.widget.TextView;
 
 import org.thingsboard.sample.gpiocontrol.R;
 
+import java.util.regex.Pattern;
+
 /**
  * @author 作者：张祥 on 2018/3/5 0005.
  *         邮箱：847874028@qq.com
@@ -25,6 +29,34 @@ import org.thingsboard.sample.gpiocontrol.R;
  */
 
 public class Utils {
+
+
+    /**获取Iemi*/
+    public static String getImei(Activity activity, String imei) {
+        String ret = null;
+        try {
+            TelephonyManager telephonyManager = (TelephonyManager) activity.getSystemService(Context.TELEPHONY_SERVICE);
+            ret = telephonyManager.getDeviceId();
+        } catch (Exception e) {
+            myLog(e.getMessage());
+        }
+        if (isReadableASCII(ret)){
+            return ret;
+        } else {
+            return imei;
+        }
+    }
+
+
+    private static boolean isReadableASCII(CharSequence string){
+        if (TextUtils.isEmpty(string)) return false;
+        try {
+            Pattern p = Pattern.compile("[\\x20-\\x7E]+");
+            return p.matcher(string).matches();
+        } catch (Throwable e){
+            return true;
+        }
+    }
 
     /**
      * 退出当前应用

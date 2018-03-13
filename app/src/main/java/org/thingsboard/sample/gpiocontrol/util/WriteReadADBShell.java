@@ -37,7 +37,6 @@ public class WriteReadADBShell {
         return null;
     }
 
-
     /**
      * adb shell 读取系统温度
      */

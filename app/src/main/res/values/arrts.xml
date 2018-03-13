@@ -50,4 +50,10 @@
     </integer-array>
 
 
+    <declare-styleable name="TextViewClock">
+        <attr name="clockTextSize" format="dimension" />
+        <attr name="clockTextColor" format="color" />
+        <attr name="space" format="dimension" />
+    </declare-styleable>
+
 </resources>

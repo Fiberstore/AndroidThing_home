@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@drawable/home_backgrounds"
-              android:orientation="horizontal">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/home_backgrounds"
+    android:orientation="horizontal">
 
     <RelativeLayout
         android:layout_width="0dp"
@@ -21,7 +22,7 @@
                 android:layout_width="89dp"
                 android:layout_height="81dp"
                 android:layout_margin="20dp"
-                android:background="@drawable/w_1_duoyun"/>
+                android:background="@drawable/w_1_duoyun" />
 
             <TextView
                 android:id="@+id/template_textview"
@@ -32,7 +33,7 @@
                 android:fontFamily="@font/msyh"
                 android:text="0"
                 android:textColor="@color/col_f89406"
-                android:textSize="50sp"/>
+                android:textSize="50sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -43,7 +44,7 @@
                 android:fontFamily="@font/msyh"
                 android:text="℃"
                 android:textColor="@color/col_f89406"
-                android:textSize="35sp"/>
+                android:textSize="35sp" />
 
             <TextView
                 android:id="@+id/location_textview"
@@ -55,7 +56,7 @@
                 android:fontFamily="@font/msyh"
                 android:text="位置"
                 android:textColor="@color/col_f89406"
-                android:textSize="30sp"/>
+                android:textSize="30sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -70,19 +71,17 @@
                     android:fontFamily="@font/msyh"
                     android:text="多云"
                     android:textColor="@color/col_f89406"
-                    android:textSize="30sp"/>
+                    android:textSize="30sp" />
 
-                <TextView
-                    android:id="@+id/time_textview"
+                <org.thingsboard.sample.gpiocontrol.widget.TextViewClock
+                    android:id="@+id/time_textviewClock"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/location_textview"
                     android:layout_marginLeft="20dp"
                     android:layout_toRightOf="@+id/weather_today_info_textview"
-                    android:fontFamily="@font/msyh"
-                    android:text="--:--:--"
-                    android:textColor="@color/col_f89406"
-                    android:textSize="30sp"/>
+                    app:clockTextSize="30sp"
+                    app:space="18dp" />
             </LinearLayout>
 
         </RelativeLayout>
@@ -91,7 +90,7 @@
             android:layout_width="8dp"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-            android:background="@color/col_afafaf"/>
+            android:background="@color/col_afafaf" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -104,26 +103,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="8dp"
                 android:layout_alignParentRight="true"
-                android:background="@color/col_afafaf"/>
+                android:background="@color/col_afafaf" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:fontFamily="@font/msyh"
                     android:id="@+id/blueToothState_textview"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/msyh" />
 
                 <Button
-                    android:fontFamily="@font/msyh"
                     android:id="@+id/getBlueToothDevice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:text="获取蓝牙设备"
-                    />
+                    android:fontFamily="@font/msyh"
+                    android:text="获取蓝牙设备" />
 
             </RelativeLayout>
 
@@ -135,7 +133,6 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="6">
-
 
 
     </LinearLayout>
