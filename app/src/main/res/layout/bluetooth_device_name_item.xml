@@ -19,4 +19,5 @@
     android:textSize="18sp"
     android:textColor="@color/white"
     android:padding="5dp"
+          android:fontFamily="@font/msyh"
 />

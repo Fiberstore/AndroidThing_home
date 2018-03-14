@@ -1,5 +1,6 @@
 package org.thingsboard.sample.gpiocontrol.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.widget.ImageView;
@@ -14,6 +15,7 @@ import org.thingsboard.sample.gpiocontrol.R;
 import org.thingsboard.sample.gpiocontrol.base.BaseActivity;
 import org.thingsboard.sample.gpiocontrol.bean.WeatherInfoBean;
 import org.thingsboard.sample.gpiocontrol.constant.ServerUrl;
+import org.thingsboard.sample.gpiocontrol.device.bluetooth.BluetoothDeviceList;
 import org.thingsboard.sample.gpiocontrol.util.GetInternetTimeInMillisAnsy;
 import org.thingsboard.sample.gpiocontrol.util.ShowImage;
 import org.thingsboard.sample.gpiocontrol.util.TimeUtils;
@@ -74,17 +76,13 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
         ButterKnife.inject(this);
         setTimerInfo();
         getWeatherInfo();
-        initBluetoothState();
-    }
-
-    private void initBluetoothState() {
-
     }
 
     /**
      * 设置时间信息
      */
     private void setTimerInfo() {
+
         GetInternetTimeInMillisAnsy getInternetTimeInMillisAnsy = new GetInternetTimeInMillisAnsy(this);
         getInternetTimeInMillisAnsy.execute("");
     }
@@ -137,8 +135,6 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
             /**没有信息*/
             case "210":
                 break;
-            default:
-                break;
         }
     }
 
@@ -166,17 +162,12 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
         weatherParameterScollview.fullScroll(ScrollView.FOCUS_UP);
     }
 
-    /**
-     * 设置今日天气信息
-     */
     private void setTodayWeatherInfo(String weather) {
 
         weatherTodayInfoTextview.setText(weather);
     }
 
-    /**
-     * 设置城市信息
-     */
+
     private void setLocationInfo(String city) {
 
         locationTextview.setText(city);
@@ -193,187 +184,184 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
      * 设置天气信息
      */
     private void setWeatherInfo(String image) {
+
+        /**0 晴
+         1 多云
+         2 阴
+         3 阵雨
+         4 雷阵雨
+         5 雷阵雨伴有冰雹
+         6 雨夹雪
+         7 小雨
+         8 中雨
+         9 大雨
+         10 暴雨
+         11 大暴雨
+         12 特大暴雨
+         13 阵雪
+         14 小雪
+         15 中雪
+         16 大雪
+         17 暴雪
+         18 雾
+         19 冻雨
+         20 沙尘暴
+         21 小雨-中雨
+         22 中雨-大雨
+         23 大雨-暴雨
+         24 暴雨-大暴雨
+         25 大暴雨-特大暴雨
+         26 小雪-中雪
+         27 中雪-大雪
+         28 大雪-暴雪
+         29 浮尘
+         30 扬沙
+         31 强沙尘暴
+         32 浓雾
+         39 台风
+         49 强浓雾
+         53 霾
+         54 中毒霾
+         55 重度霾
+         56 严重霾
+         57 大雾
+         58 特强浓雾
+         99 无
+         301 雨
+         302 雪*/
         int[] iconArray = getResources().getIntArray(R.array.weather_icon_array);
         switch (image) {
             case "0":
-                /**0 晴*/
-                ShowImage.showImage(this, iconArray[0], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_0_sun);
                 break;
             case "1":
-                /** 1 多云*/
-                ShowImage.showImage(this, iconArray[1], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_1_duoyun);
                 break;
             case "2":
-                /**2 阴*/
-                ShowImage.showImage(this, iconArray[2], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_2_ying);
                 break;
             case "3":
-                /**3 阵雨*/
-                ShowImage.showImage(this, iconArray[3], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_3_zhenyu);
                 break;
             case "4":
-                /**4 雷阵雨*/
-                ShowImage.showImage(this, iconArray[4], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_4_leizhenyu);
                 break;
             case "5":
-                /**5 雷阵雨伴有冰雹*/
-                ShowImage.showImage(this, iconArray[5], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_5_leizhenyu_bingbao);
                 break;
             case "6":
-                /**6 雨夹雪*/
-                ShowImage.showImage(this, iconArray[6], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_6_yujiaxue);
                 break;
             case "7":
-                /** 7 小雨*/
-                ShowImage.showImage(this, iconArray[7], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_7_xiaoyu);
                 break;
             case "8":
-                /**8 中雨*/
-                ShowImage.showImage(this, iconArray[8], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_8_zhongyu);
                 break;
             case "9":
-                /** 9 大雨*/
-                ShowImage.showImage(this, iconArray[9], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_9_dayu);
                 break;
             case "10":
-                /**10 暴雨*/
-                ShowImage.showImage(this, iconArray[10], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_10_baoyu);
                 break;
             case "11":
-                /**11 大暴雨*/
-                ShowImage.showImage(this, iconArray[11], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_11_dabaoyu);
                 break;
             case "12":
-                /**12 特大暴雨*/
-                ShowImage.showImage(this, iconArray[12], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_12_tedabaoyu);
                 break;
             case "13":
-                /**13 阵雪*/
-                ShowImage.showImage(this, iconArray[13], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_13_zhenxue);
                 break;
             case "14":
-                /**14 小雪*/
-                ShowImage.showImage(this, iconArray[14], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_14_xiaoxue);
                 break;
             case "15":
-                /**15 中雪*/
-                ShowImage.showImage(this, iconArray[15], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_15_zhongxue);
                 break;
             case "16":
-                /**16 大雪*/
-                ShowImage.showImage(this, iconArray[16], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_16_daxue);
                 break;
             case "17":
-                /** 17 暴雪*/
-                ShowImage.showImage(this, iconArray[17], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_17_baoxue);
                 break;
             case "18":
-                /**18 雾*/
-                ShowImage.showImage(this, iconArray[18], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_18_wu);
                 break;
             case "19":
-                /**19 冻雨*/
-                ShowImage.showImage(this, iconArray[19], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_19_dongyu);
                 break;
             case "20":
-                /**20 沙尘暴*/
-                ShowImage.showImage(this, iconArray[20], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_20_shachengbao);
                 break;
             case "21":
-                /** 21 小雨-中雨*/
-                ShowImage.showImage(this, iconArray[21], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_21_xiaoyu_zhonyu);
                 break;
             case "22":
-                /**22 中雨-大雨*/
-                ShowImage.showImage(this, iconArray[22], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_22_zhongyu_dayu);
                 break;
             case "23":
-                /**23 大雨-暴雨*/
-                ShowImage.showImage(this, iconArray[23], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_23_dayu_baoyu);
                 break;
             case "24":
-                /**24 暴雨-大暴雨*/
-                ShowImage.showImage(this, iconArray[24], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_24_baoyu_dabaoyu);
                 break;
             case "25":
-                /**25 大暴雨-特大暴雨*/
-                ShowImage.showImage(this, iconArray[25], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_25_dabao_tedabaoyu);
                 break;
             case "26":
-                /**26 小雪-中雪*/
-                ShowImage.showImage(this, iconArray[26], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_26_xiaoxue_zhongxue);
                 break;
             case "27":
-                /**27 中雪-大雪*/
-                ShowImage.showImage(this, iconArray[27], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_27_zhongxue_daxue);
                 break;
             case "28":
-                /** 28 大雪-暴雪*/
-                ShowImage.showImage(this, iconArray[28], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_28_daxue_baoxue);
                 break;
             case "29":
-                /**29 浮尘*/
-                ShowImage.showImage(this, iconArray[29], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_29_fucheng);
                 break;
             case "30":
-                /**30 扬沙*/
-                ShowImage.showImage(this, iconArray[30], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_30_yangchen);
                 break;
             case "31":
-                /** 31 强沙尘暴*/
-                ShowImage.showImage(this, iconArray[31], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_31_qiangshachen);
                 break;
             case "32":
-                /** 32 浓雾*/
-                ShowImage.showImage(this, iconArray[32], imageTodayWeatherIcon);
-                break;
-            case "39":
-                /** 39 台风*/
-                ShowImage.showImage(this, iconArray[33], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_32_nongwu);
                 break;
             case "49":
-                /** 49 强浓雾*/
-                ShowImage.showImage(this, iconArray[34], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_49_qiangnongwu);
                 break;
             case "53":
-                /**  53 霾*/
-                ShowImage.showImage(this, iconArray[35], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_53_mai);
                 break;
             case "54":
-                /** 54 中毒霾*/
-                ShowImage.showImage(this, iconArray[36], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_54_zhongdumai);
                 break;
             case "55":
-                /** 55 重度霾*/
-                ShowImage.showImage(this, iconArray[37], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_55_zzhongdumai);
                 break;
             case "56":
-                /** 56 严重霾*/
-                ShowImage.showImage(this, iconArray[38], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_56_yanzhongmai);
                 break;
             case "57":
-                /** 57 大雾*/
-                ShowImage.showImage(this, iconArray[39], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_57_dawu);
                 break;
             case "58":
-                /**58 特强浓雾*/
-                ShowImage.showImage(this, iconArray[40], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_58_tedanongwu);
                 break;
             case "99":
-                /** 99 无*/
-                ShowImage.showImage(this, iconArray[41], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_99_non);
                 break;
             case "301":
-                /** 301 雨*/
-                ShowImage.showImage(this, iconArray[42], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_301_yu);
                 break;
             case "302":
-                /**302 雪*/
-                ShowImage.showImage(this, iconArray[43], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_302_xue);
                 break;
             default:
-                /**无*/
-                ShowImage.showImage(this, iconArray[42], imageTodayWeatherIcon);
+                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_7_xiaoyu);
                 break;
         }
     }
@@ -381,7 +369,7 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
     @OnClick(R.id.getBlueToothDevice)
     public void onViewClicked() {
 
-
+        startActivity(new Intent(this, BluetoothDeviceList.class));
     }
 
 
@@ -402,8 +390,9 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
                 long timeInMillis = calendar.getTimeInMillis();
                 String format = hourformatter.format(timeInMillis);
                 timeTextview.setText(format);
-                /**如果是整点刷新天气*/
+                /**如果是整点*/
                 if (TimeUtils.currentIsTheWholePointOf(calendar)) {
+                    /**如果是整点刷新天气*/
                     getWeatherInfo();
                 }
             }

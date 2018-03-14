@@ -22,7 +22,7 @@
                 android:layout_width="89dp"
                 android:layout_height="81dp"
                 android:layout_margin="20dp"
-                android:background="@drawable/w_1_duoyun"/>
+                android:background="@drawable/w_99_non"/>
 
             <TextView
                 android:id="@+id/template_textview"
