@@ -85,4 +85,9 @@
     <color name="col_e9f5ff">#e9f5ff</color>
     <color name="col_9cd5ff">#9cd5ff</color>
     <color name="col_c9d4eb">#c9d4eb</color>
+    <color name="black90">#383431</color><!--黑色 -->
+    <color name="dimgray">#696969</color><!--暗灰色 -->
+    <color name="whitesmoke">#F5F5F5</color><!--烟白色 -->
+    <color name="btn_clickable">#1C1C1C</color>
+
 </resources>

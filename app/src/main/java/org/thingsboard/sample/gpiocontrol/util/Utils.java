@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.thingsboard.sample.gpiocontrol.R;
 
@@ -30,7 +31,7 @@ import java.util.regex.Pattern;
 
 public class Utils {
 
-
+    private static Toast mToast;
     /**获取Iemi*/
     public static String getImei(Activity activity, String imei) {
         String ret = null;
@@ -140,6 +141,19 @@ public class Utils {
                 info.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         textView.setText(ss, TextView.BufferType.SPANNABLE);
+    }
 
+    public static void toastShow(final Activity activity, final String message) {
+        activity.runOnUiThread(new Runnable() {
+            public void run() {
+                if (mToast == null) {
+                    mToast = Toast.makeText(activity, message, Toast.LENGTH_SHORT);
+                } else {
+                    mToast.setText(message);
+                    mToast.setDuration(Toast.LENGTH_SHORT);
+                }
+                mToast.show();
+            }
+        });
     }
 }

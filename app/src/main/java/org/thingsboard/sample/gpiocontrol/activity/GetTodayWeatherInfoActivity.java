@@ -74,13 +74,17 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
         ButterKnife.inject(this);
         setTimerInfo();
         getWeatherInfo();
+        initBluetoothState();
+    }
+
+    private void initBluetoothState() {
+
     }
 
     /**
      * 设置时间信息
      */
     private void setTimerInfo() {
-
         GetInternetTimeInMillisAnsy getInternetTimeInMillisAnsy = new GetInternetTimeInMillisAnsy(this);
         getInternetTimeInMillisAnsy.execute("");
     }
@@ -133,6 +137,8 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
             /**没有信息*/
             case "210":
                 break;
+            default:
+                break;
         }
     }
 
@@ -160,12 +166,17 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
         weatherParameterScollview.fullScroll(ScrollView.FOCUS_UP);
     }
 
+    /**
+     * 设置今日天气信息
+     */
     private void setTodayWeatherInfo(String weather) {
 
         weatherTodayInfoTextview.setText(weather);
     }
 
-
+    /**
+     * 设置城市信息
+     */
     private void setLocationInfo(String city) {
 
         locationTextview.setText(city);
@@ -182,205 +193,187 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
      * 设置天气信息
      */
     private void setWeatherInfo(String image) {
-
-        /**0 晴
-         1 多云
-         2 阴
-         3 阵雨
-         4 雷阵雨
-         5 雷阵雨伴有冰雹
-         6 雨夹雪
-         7 小雨
-         8 中雨
-         9 大雨
-         10 暴雨
-         11 大暴雨
-         12 特大暴雨
-         13 阵雪
-         14 小雪
-         15 中雪
-         16 大雪
-         17 暴雪
-         18 雾
-         19 冻雨
-         20 沙尘暴
-         21 小雨-中雨
-         22 中雨-大雨
-         23 大雨-暴雨
-         24 暴雨-大暴雨
-         25 大暴雨-特大暴雨
-         26 小雪-中雪
-         27 中雪-大雪
-         28 大雪-暴雪
-         29 浮尘
-         30 扬沙
-         31 强沙尘暴
-         32 浓雾
-         39 台风
-         49 强浓雾
-         53 霾
-         54 中毒霾
-         55 重度霾
-         56 严重霾
-         57 大雾
-         58 特强浓雾
-         99 无
-         301 雨
-         302 雪*/
         int[] iconArray = getResources().getIntArray(R.array.weather_icon_array);
         switch (image) {
             case "0":
+                /**0 晴*/
                 ShowImage.showImage(this, iconArray[0], imageTodayWeatherIcon);
                 break;
             case "1":
+                /** 1 多云*/
                 ShowImage.showImage(this, iconArray[1], imageTodayWeatherIcon);
                 break;
             case "2":
+                /**2 阴*/
                 ShowImage.showImage(this, iconArray[2], imageTodayWeatherIcon);
                 break;
             case "3":
+                /**3 阵雨*/
                 ShowImage.showImage(this, iconArray[3], imageTodayWeatherIcon);
                 break;
             case "4":
+                /**4 雷阵雨*/
                 ShowImage.showImage(this, iconArray[4], imageTodayWeatherIcon);
                 break;
             case "5":
+                /**5 雷阵雨伴有冰雹*/
                 ShowImage.showImage(this, iconArray[5], imageTodayWeatherIcon);
                 break;
             case "6":
+                /**6 雨夹雪*/
                 ShowImage.showImage(this, iconArray[6], imageTodayWeatherIcon);
                 break;
             case "7":
+                /** 7 小雨*/
                 ShowImage.showImage(this, iconArray[7], imageTodayWeatherIcon);
                 break;
             case "8":
+                /**8 中雨*/
                 ShowImage.showImage(this, iconArray[8], imageTodayWeatherIcon);
                 break;
             case "9":
+                /** 9 大雨*/
                 ShowImage.showImage(this, iconArray[9], imageTodayWeatherIcon);
                 break;
             case "10":
+                /**10 暴雨*/
                 ShowImage.showImage(this, iconArray[10], imageTodayWeatherIcon);
                 break;
             case "11":
+                /**11 大暴雨*/
                 ShowImage.showImage(this, iconArray[11], imageTodayWeatherIcon);
                 break;
             case "12":
+                /**12 特大暴雨*/
                 ShowImage.showImage(this, iconArray[12], imageTodayWeatherIcon);
                 break;
             case "13":
+                /**13 阵雪*/
                 ShowImage.showImage(this, iconArray[13], imageTodayWeatherIcon);
                 break;
             case "14":
+                /**14 小雪*/
                 ShowImage.showImage(this, iconArray[14], imageTodayWeatherIcon);
                 break;
             case "15":
+                /**15 中雪*/
                 ShowImage.showImage(this, iconArray[15], imageTodayWeatherIcon);
                 break;
             case "16":
+                /**16 大雪*/
                 ShowImage.showImage(this, iconArray[16], imageTodayWeatherIcon);
                 break;
             case "17":
+                /** 17 暴雪*/
                 ShowImage.showImage(this, iconArray[17], imageTodayWeatherIcon);
                 break;
             case "18":
+                /**18 雾*/
                 ShowImage.showImage(this, iconArray[18], imageTodayWeatherIcon);
                 break;
             case "19":
+                /**19 冻雨*/
                 ShowImage.showImage(this, iconArray[19], imageTodayWeatherIcon);
                 break;
             case "20":
+                /**20 沙尘暴*/
                 ShowImage.showImage(this, iconArray[20], imageTodayWeatherIcon);
                 break;
             case "21":
+                /** 21 小雨-中雨*/
                 ShowImage.showImage(this, iconArray[21], imageTodayWeatherIcon);
                 break;
             case "22":
+                /**22 中雨-大雨*/
                 ShowImage.showImage(this, iconArray[22], imageTodayWeatherIcon);
                 break;
             case "23":
+                /**23 大雨-暴雨*/
                 ShowImage.showImage(this, iconArray[23], imageTodayWeatherIcon);
                 break;
             case "24":
+                /**24 暴雨-大暴雨*/
                 ShowImage.showImage(this, iconArray[24], imageTodayWeatherIcon);
                 break;
             case "25":
+                /**25 大暴雨-特大暴雨*/
                 ShowImage.showImage(this, iconArray[25], imageTodayWeatherIcon);
                 break;
             case "26":
+                /**26 小雪-中雪*/
                 ShowImage.showImage(this, iconArray[26], imageTodayWeatherIcon);
                 break;
             case "27":
+                /**27 中雪-大雪*/
                 ShowImage.showImage(this, iconArray[27], imageTodayWeatherIcon);
                 break;
             case "28":
+                /** 28 大雪-暴雪*/
                 ShowImage.showImage(this, iconArray[28], imageTodayWeatherIcon);
                 break;
             case "29":
+                /**29 浮尘*/
                 ShowImage.showImage(this, iconArray[29], imageTodayWeatherIcon);
                 break;
             case "30":
+                /**30 扬沙*/
                 ShowImage.showImage(this, iconArray[30], imageTodayWeatherIcon);
                 break;
             case "31":
+                /** 31 强沙尘暴*/
                 ShowImage.showImage(this, iconArray[31], imageTodayWeatherIcon);
                 break;
             case "32":
+                /** 32 浓雾*/
                 ShowImage.showImage(this, iconArray[32], imageTodayWeatherIcon);
                 break;
-            case "33":
+            case "39":
+                /** 39 台风*/
                 ShowImage.showImage(this, iconArray[33], imageTodayWeatherIcon);
                 break;
-            case "34":
+            case "49":
+                /** 49 强浓雾*/
                 ShowImage.showImage(this, iconArray[34], imageTodayWeatherIcon);
                 break;
-            case "35":
+            case "53":
+                /**  53 霾*/
                 ShowImage.showImage(this, iconArray[35], imageTodayWeatherIcon);
                 break;
-            case "36":
+            case "54":
+                /** 54 中毒霾*/
                 ShowImage.showImage(this, iconArray[36], imageTodayWeatherIcon);
                 break;
-            case "37":
+            case "55":
+                /** 55 重度霾*/
                 ShowImage.showImage(this, iconArray[37], imageTodayWeatherIcon);
                 break;
-            case "38":
+            case "56":
+                /** 56 严重霾*/
                 ShowImage.showImage(this, iconArray[38], imageTodayWeatherIcon);
                 break;
-            case "39":
+            case "57":
+                /** 57 大雾*/
                 ShowImage.showImage(this, iconArray[39], imageTodayWeatherIcon);
                 break;
-            case "49":
+            case "58":
+                /**58 特强浓雾*/
                 ShowImage.showImage(this, iconArray[40], imageTodayWeatherIcon);
                 break;
-            case "53":
+            case "99":
+                /** 99 无*/
                 ShowImage.showImage(this, iconArray[41], imageTodayWeatherIcon);
                 break;
-            case "54":
+            case "301":
+                /** 301 雨*/
                 ShowImage.showImage(this, iconArray[42], imageTodayWeatherIcon);
                 break;
-            case "55":
+            case "302":
+                /**302 雪*/
                 ShowImage.showImage(this, iconArray[43], imageTodayWeatherIcon);
                 break;
-            case "56":
-                ShowImage.showImage(this, iconArray[44], imageTodayWeatherIcon);
-                break;
-            case "57":
-                ShowImage.showImage(this, iconArray[45], imageTodayWeatherIcon);
-                break;
-            case "58":
-                ShowImage.showImage(this, iconArray[46], imageTodayWeatherIcon);
-                break;
-            case "99":
-                ShowImage.showImage(this, iconArray[47], imageTodayWeatherIcon);
-                break;
-            case "301":
-                ShowImage.showImage(this, iconArray[48], imageTodayWeatherIcon);
-                break;
-            case "302":
-                ShowImage.showImage(this, iconArray[49], imageTodayWeatherIcon);
-                break;
             default:
-                ShowImage.showImage(this, iconArray[47], imageTodayWeatherIcon);
+                /**无*/
+                ShowImage.showImage(this, iconArray[42], imageTodayWeatherIcon);
                 break;
         }
     }
@@ -409,9 +402,8 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
                 long timeInMillis = calendar.getTimeInMillis();
                 String format = hourformatter.format(timeInMillis);
                 timeTextview.setText(format);
-                /**如果是整点*/
+                /**如果是整点刷新天气*/
                 if (TimeUtils.currentIsTheWholePointOf(calendar)) {
-                    /**如果是整点刷新天气*/
                     getWeatherInfo();
                 }
             }
