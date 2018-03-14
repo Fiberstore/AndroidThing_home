@@ -2610,7 +2610,7 @@ public final class R {
     public static final int abc_search_view=0x7f0b0019;
     public static final int abc_select_dialog_material=0x7f0b001a;
     public static final int activity_main=0x7f0b001b;
-    public static final int activity_mqtt_test=0x7f0b001c;
+    public static final int activity_mqtt =0x7f0b001c;
     public static final int activity_new=0x7f0b001d;
     public static final int activity_time=0x7f0b001e;
     public static final int activity_weather=0x7f0b001f;

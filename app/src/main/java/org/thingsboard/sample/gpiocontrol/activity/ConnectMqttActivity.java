@@ -3,11 +3,7 @@ package org.thingsboard.sample.gpiocontrol.activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.SeekBar;
-import android.widget.TextView;
 
 
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
@@ -38,7 +34,7 @@ import java.util.List;
  *         功能：
  */
 
-public class MqttTest extends BaseActivity {
+public class ConnectMqttActivity extends BaseActivity {
 
     /**
      * 主机名称
@@ -76,7 +72,7 @@ public class MqttTest extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mqtt_test);
+        setContentView(R.layout.activity_mqtt);
         mqttInfoListview = findViewById(R.id.mqttInfoList);
         initListView();
         initMqtt();
