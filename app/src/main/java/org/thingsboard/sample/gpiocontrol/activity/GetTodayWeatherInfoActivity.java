@@ -1,11 +1,13 @@
 package org.thingsboard.sample.gpiocontrol.activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import com.google.gson.Gson;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -17,7 +19,6 @@ import org.thingsboard.sample.gpiocontrol.bean.WeatherInfoBean;
 import org.thingsboard.sample.gpiocontrol.constant.ServerUrl;
 import org.thingsboard.sample.gpiocontrol.device.bluetooth.BluetoothDeviceList;
 import org.thingsboard.sample.gpiocontrol.util.GetInternetTimeInMillisAnsy;
-import org.thingsboard.sample.gpiocontrol.util.ShowImage;
 import org.thingsboard.sample.gpiocontrol.util.TimeUtils;
 import org.thingsboard.sample.gpiocontrol.util.Utils;
 
@@ -45,8 +46,6 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
     TextView locationTextview;
     @InjectView(R.id.weather_today_info_textview)
     TextView weatherTodayInfoTextview;
-    @InjectView(R.id.blueToothState_textview)
-    TextView blueToothStateTextview;
     @InjectView(R.id.timeTextview)
     TextView timeTextview;
     @InjectView(R.id.template_hignt_textview)
@@ -67,6 +66,8 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
     TextView dateTextview;
     @InjectView(R.id.weatherParameter_scollview)
     ScrollView weatherParameterScollview;
+    @InjectView(R.id.videoView)
+    VideoView videoView;
     private CountDownTimer cdTimer;
 
     @Override
@@ -76,6 +77,13 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
         ButterKnife.inject(this);
         setTimerInfo();
         getWeatherInfo();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        videoView.setVideoURI(Uri.parse("http://alcdn.hls.xiaoka.tv/2017427/14b/7b3/Jzq08Sl8BbyELNTo/index.m3u8"));
+        videoView.start();
     }
 
     /**
@@ -365,12 +373,12 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
                 break;
         }
     }
-
+/*
     @OnClick(R.id.getBlueToothDevice)
     public void onViewClicked() {
 
         startActivity(new Intent(this, BluetoothDeviceList.class));
-    }
+    }*/
 
 
     /**
