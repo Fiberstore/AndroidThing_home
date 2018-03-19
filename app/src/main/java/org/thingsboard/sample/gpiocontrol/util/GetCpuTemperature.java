@@ -1,5 +1,7 @@
 package org.thingsboard.sample.gpiocontrol.util;
 
+import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Message;
 import android.util.Log;
 
@@ -16,26 +18,38 @@ import java.util.concurrent.TimeUnit;
 
 public class GetCpuTemperature {
 
+    GetCPUTempInfoInterface getCPUTempInfoInterface;
+
+    public GetCpuTemperature(GetCPUTempInfoInterface getCPUTempInfoInterface) {
+        super();
+        this.getCPUTempInfoInterface = getCPUTempInfoInterface;
+        getDeviceTemplate(1);
+    }
+
     /**
      * 获取CPU温度信息
      */
-    private void getDeviceTemplate(int seconds) {
+    public void getDeviceTemplate(int seconds) {
         ScheduledExecutorService scheduledExecutorService = new ScheduledThreadPoolExecutor(1);
         long initialDelay = 1;
         // 从现在开始1秒钟之后，每隔1秒钟执行一次job1
         scheduledExecutorService.scheduleAtFixedRate(new RemindTask(), initialDelay, seconds, TimeUnit.SECONDS);
     }
 
+
     class RemindTask implements Runnable {
         @Override
         public void run() {
             String read = WriteReadADBShell.read("/sys/class/thermal/thermal_zone0/temp");
-            double temp = Integer.parseInt(read) / 1000.0;
-           // getNetTime();
-            Message message = new Message();
+            final double temp = Integer.parseInt(read) / 1000.0;
+            Log.e("temp", temp + "");
+            getCPUTempInfoInterface.getCpuTempDoubleInfo(temp);
+
+            // getNetTime();
+        /*    Message message = new Message();
             message.obj = temp;
           //  myHandler.sendMessage(message);
-          /*  JSONObject jsonObject = new JSONObject();
+            JSONObject jsonObject = new JSONObject();
             try {
                 String temperatureJSON = jsonObject.put("temperature", temp).toString();
                 MqttMessage mqttMessage = new MqttMessage(temperatureJSON.getBytes());
@@ -48,4 +62,12 @@ public class GetCpuTemperature {
         }
     }
 
+
+    public interface GetCPUTempInfoInterface {
+
+        /**
+         * 异步获取的温度信息
+         */
+        void getCpuTempDoubleInfo(double tempInfo);
+    }
 }

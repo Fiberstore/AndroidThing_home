@@ -1,13 +1,11 @@
 package org.thingsboard.sample.gpiocontrol.activity;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.VideoView;
 
 import com.google.gson.Gson;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -17,19 +15,20 @@ import org.thingsboard.sample.gpiocontrol.R;
 import org.thingsboard.sample.gpiocontrol.base.BaseActivity;
 import org.thingsboard.sample.gpiocontrol.bean.WeatherInfoBean;
 import org.thingsboard.sample.gpiocontrol.constant.ServerUrl;
-import org.thingsboard.sample.gpiocontrol.device.bluetooth.BluetoothDeviceList;
+import org.thingsboard.sample.gpiocontrol.util.GetCpuTemperature;
 import org.thingsboard.sample.gpiocontrol.util.GetInternetTimeInMillisAnsy;
 import org.thingsboard.sample.gpiocontrol.util.TimeUtils;
 import org.thingsboard.sample.gpiocontrol.util.Utils;
+import org.thingsboard.sample.gpiocontrol.widget.NoticeView;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.TimeZone;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-import butterknife.OnClick;
 import okhttp3.Call;
 
 /**
@@ -66,8 +65,8 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
     TextView dateTextview;
     @InjectView(R.id.weatherParameter_scollview)
     ScrollView weatherParameterScollview;
-    @InjectView(R.id.videoView)
-    VideoView videoView;
+    @InjectView(R.id.cpu_temp_noticeView)
+    NoticeView cpuTempNoticeView;
     private CountDownTimer cdTimer;
 
     @Override
@@ -77,14 +76,29 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
         ButterKnife.inject(this);
         setTimerInfo();
         getWeatherInfo();
+        setCpuTempNoticeView();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        videoView.setVideoURI(Uri.parse("http://alcdn.hls.xiaoka.tv/2017427/14b/7b3/Jzq08Sl8BbyELNTo/index.m3u8"));
-        videoView.start();
+    /**
+     * 获取温度信息
+     */
+    private void setCpuTempNoticeView() {
+
+        new GetCpuTemperature(new GetCpuTemperature.GetCPUTempInfoInterface() {
+            @Override
+            public void getCpuTempDoubleInfo(final double tempInfo) {
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        cpuTempNoticeView.show("CPU 温度" + tempInfo + "℃");
+                    }
+                });
+
+            }
+        });
     }
+
 
     /**
      * 设置时间信息

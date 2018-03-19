@@ -105,12 +105,12 @@
                 android:background="@color/col_afafaf"/>
 
             <LinearLayout
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp">
 
-                <include  layout="@layout/layout_home_weatherinfo"/>
+                <include layout="@layout/layout_home_weatherinfo"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -122,24 +122,39 @@
         android:layout_height="match_parent"
         android:layout_weight="6">
 
-         <!--<TextView
-            android:id="@+id/blueToothState_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/msyh"/>
-
-        <Button
-            android:id="@+id/getBlueToothDevice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:fontFamily="@font/msyh"
-            android:text="获取蓝牙设备"/>-->
-
-        <VideoView
-            android:id="@+id/videoView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="100dp">
+
+            <org.thingsboard.sample.gpiocontrol.widget.NoticeView
+                android:id="@+id/cpu_temp_noticeView"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_round"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                app:nvInterval="2000"
+                app:nvTextColor="#FFFFFFFF"
+                app:nvTextGravity="center"
+                />
+        </LinearLayout>
+
+        <!--<TextView
+           android:id="@+id/blueToothState_textview"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:fontFamily="@font/msyh"/>
+
+       <Button
+           android:id="@+id/getBlueToothDevice"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerInParent="true"
+           android:fontFamily="@font/msyh"
+           android:text="获取蓝牙设备"/>-->
+
 
     </LinearLayout>
 
