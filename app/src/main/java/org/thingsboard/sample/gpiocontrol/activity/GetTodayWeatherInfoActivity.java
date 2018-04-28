@@ -1,12 +1,16 @@
 package org.thingsboard.sample.gpiocontrol.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.google.android.things.pio.Gpio;
+import com.google.android.things.pio.PeripheralManager;
 import com.google.gson.Gson;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -15,20 +19,25 @@ import org.thingsboard.sample.gpiocontrol.R;
 import org.thingsboard.sample.gpiocontrol.base.BaseActivity;
 import org.thingsboard.sample.gpiocontrol.bean.WeatherInfoBean;
 import org.thingsboard.sample.gpiocontrol.constant.ServerUrl;
+import org.thingsboard.sample.gpiocontrol.device.bluetooth.BluetoothDeviceListActivity;
 import org.thingsboard.sample.gpiocontrol.util.GetCpuTemperature;
 import org.thingsboard.sample.gpiocontrol.util.GetInternetTimeInMillisAnsy;
+import org.thingsboard.sample.gpiocontrol.util.SetGpioState;
 import org.thingsboard.sample.gpiocontrol.util.TimeUtils;
 import org.thingsboard.sample.gpiocontrol.util.Utils;
 import org.thingsboard.sample.gpiocontrol.widget.NoticeView;
+import org.thingsboard.sample.gpiocontrol.widget.SetWeatherIconInfo;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 import okhttp3.Call;
 
 /**
@@ -68,6 +77,8 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
     @InjectView(R.id.cpu_temp_noticeView)
     NoticeView cpuTempNoticeView;
     private CountDownTimer cdTimer;
+    private Gpio openBCM17Gpio, openBCM22Gpio, openBCM27Gpio, openBCM18Gpio;
+    boolean buttonState1, buttonState2, buttonState3, buttonState4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +88,79 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
         setTimerInfo();
         getWeatherInfo();
         setCpuTempNoticeView();
+        initGpio();
+    }
+
+    private void initGpio() {
+
+        /**端口设备如下: [
+         * BCM10,
+         * BCM11,
+         * BCM12,
+         * BCM13,
+         * BCM14,
+         * BCM15,
+         * BCM16,
+         * BCM17,
+         * BCM18,
+         * BCM19,
+         * BCM2,
+         * BCM20,
+         * BCM21,
+         * BCM22,
+         * BCM23,
+         * BCM24,
+         * BCM25,
+         * BCM26,
+         * BCM27,
+         * BCM3,
+         * BCM4,
+         * BCM5,
+         * BCM6,
+         * BCM7,
+         * BCM8,
+         * BCM9]
+         */
+        PeripheralManager manager = PeripheralManager.getInstance();
+        List<String> portList = manager.getGpioList();
+        if (portList.isEmpty()) {
+            Utils.myLog("GPIO端口没有设备");
+        } else {
+            Utils.myLog("端口设备如下: " + portList);
+            try {
+                openBCM17Gpio = manager.openGpio("BCM17");
+                openBCM18Gpio = manager.openGpio("BCM18");
+                openBCM22Gpio = manager.openGpio("BCM22");
+                openBCM27Gpio = manager.openGpio("BCM27");
+                SetGpioState.setOutputHight(openBCM17Gpio);
+                SetGpioState.setOutputHight(openBCM18Gpio);
+                SetGpioState.setOutputHight(openBCM22Gpio);
+                SetGpioState.setOutputHight(openBCM27Gpio);
+            } catch (Exception e) {
+
+            }
+        }
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (openBCM17Gpio != null || openBCM27Gpio != null || openBCM22Gpio != null || openBCM18Gpio != null) {
+            try {
+                openBCM17Gpio.close();
+                openBCM17Gpio = null;
+                openBCM27Gpio.close();
+                openBCM27Gpio = null;
+                openBCM22Gpio.close();
+                openBCM22Gpio = null;
+                openBCM18Gpio.close();
+                openBCM18Gpio = null;
+            } catch (IOException e) {
+                Utils.myLog("Unable to close GPIO" + e);
+            }
+        }
     }
 
     /**
@@ -139,7 +223,7 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
             /**正常*/
             case "0":
                 WeatherInfoBean.ResultBean weatherInfoBeanResult = weatherInfoBean.getResult();
-                setWeatherInfo(weatherInfoBeanResult.getImg());
+                SetWeatherIconInfo.setWeatherInfo(this, weatherInfoBeanResult.getImg(), imageTodayWeatherIcon);
                 setTemplate(weatherInfoBeanResult.getTemp());
                 setLocationInfo(weatherInfoBeanResult.getCity());
                 setTodayWeatherInfo(weatherInfoBeanResult.getWeather());
@@ -202,197 +286,13 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
         templateTextview.setText(temp);
     }
 
-    /**
-     * 设置天气信息
-     */
-    private void setWeatherInfo(String image) {
 
-        /**0 晴
-         1 多云
-         2 阴
-         3 阵雨
-         4 雷阵雨
-         5 雷阵雨伴有冰雹
-         6 雨夹雪
-         7 小雨
-         8 中雨
-         9 大雨
-         10 暴雨
-         11 大暴雨
-         12 特大暴雨
-         13 阵雪
-         14 小雪
-         15 中雪
-         16 大雪
-         17 暴雪
-         18 雾
-         19 冻雨
-         20 沙尘暴
-         21 小雨-中雨
-         22 中雨-大雨
-         23 大雨-暴雨
-         24 暴雨-大暴雨
-         25 大暴雨-特大暴雨
-         26 小雪-中雪
-         27 中雪-大雪
-         28 大雪-暴雪
-         29 浮尘
-         30 扬沙
-         31 强沙尘暴
-         32 浓雾
-         39 台风
-         49 强浓雾
-         53 霾
-         54 中毒霾
-         55 重度霾
-         56 严重霾
-         57 大雾
-         58 特强浓雾
-         99 无
-         301 雨
-         302 雪*/
-        int[] iconArray = getResources().getIntArray(R.array.weather_icon_array);
-        switch (image) {
-            case "0":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_0_sun);
-                break;
-            case "1":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_1_duoyun);
-                break;
-            case "2":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_2_ying);
-                break;
-            case "3":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_3_zhenyu);
-                break;
-            case "4":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_4_leizhenyu);
-                break;
-            case "5":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_5_leizhenyu_bingbao);
-                break;
-            case "6":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_6_yujiaxue);
-                break;
-            case "7":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_7_xiaoyu);
-                break;
-            case "8":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_8_zhongyu);
-                break;
-            case "9":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_9_dayu);
-                break;
-            case "10":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_10_baoyu);
-                break;
-            case "11":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_11_dabaoyu);
-                break;
-            case "12":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_12_tedabaoyu);
-                break;
-            case "13":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_13_zhenxue);
-                break;
-            case "14":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_14_xiaoxue);
-                break;
-            case "15":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_15_zhongxue);
-                break;
-            case "16":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_16_daxue);
-                break;
-            case "17":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_17_baoxue);
-                break;
-            case "18":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_18_wu);
-                break;
-            case "19":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_19_dongyu);
-                break;
-            case "20":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_20_shachengbao);
-                break;
-            case "21":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_21_xiaoyu_zhonyu);
-                break;
-            case "22":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_22_zhongyu_dayu);
-                break;
-            case "23":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_23_dayu_baoyu);
-                break;
-            case "24":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_24_baoyu_dabaoyu);
-                break;
-            case "25":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_25_dabao_tedabaoyu);
-                break;
-            case "26":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_26_xiaoxue_zhongxue);
-                break;
-            case "27":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_27_zhongxue_daxue);
-                break;
-            case "28":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_28_daxue_baoxue);
-                break;
-            case "29":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_29_fucheng);
-                break;
-            case "30":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_30_yangchen);
-                break;
-            case "31":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_31_qiangshachen);
-                break;
-            case "32":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_32_nongwu);
-                break;
-            case "49":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_49_qiangnongwu);
-                break;
-            case "53":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_53_mai);
-                break;
-            case "54":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_54_zhongdumai);
-                break;
-            case "55":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_55_zzhongdumai);
-                break;
-            case "56":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_56_yanzhongmai);
-                break;
-            case "57":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_57_dawu);
-                break;
-            case "58":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_58_tedanongwu);
-                break;
-            case "99":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_99_non);
-                break;
-            case "301":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_301_yu);
-                break;
-            case "302":
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_302_xue);
-                break;
-            default:
-                imageTodayWeatherIcon.setBackgroundResource(R.drawable.w_7_xiaoyu);
-                break;
-        }
-    }
-/*
-    @OnClick(R.id.getBlueToothDevice)
+
+    @OnClick(R.id.open_button5)
     public void onViewClicked() {
 
-        startActivity(new Intent(this, BluetoothDeviceList.class));
-    }*/
+        startActivity(new Intent(this, BluetoothDeviceListActivity.class));
+    }
 
 
     /**
@@ -425,5 +325,35 @@ public class GetTodayWeatherInfoActivity extends BaseActivity implements GetInte
             }
         };
         cdTimer.start();
+    }
+
+    @OnClick({R.id.open_button1, R.id.open_button2, R.id.open_button3, R.id.open_button4})
+    public void onViewClicked(View view) {
+        try {
+            switch (view.getId()) {
+                case R.id.open_button1:
+                    SetGpioState.setOutputState(openBCM17Gpio, buttonState1);
+                    ((Button) view).setText(buttonState1 == false ? "开启" : "关闭");
+                    buttonState1=!buttonState1;
+                    break;
+                case R.id.open_button2:
+                    SetGpioState.setOutputState(openBCM27Gpio, buttonState4);
+                    ((Button) view).setText(buttonState4 == false ? "开启" : "关闭");
+                    buttonState4=!buttonState4;
+                    break;
+                case R.id.open_button3:
+                    SetGpioState.setOutputState(openBCM22Gpio, buttonState3);
+                    ((Button) view).setText(buttonState3 == false ? "开启" : "关闭");
+                    buttonState3=!buttonState3;
+                    break;
+                case R.id.open_button4:
+                    SetGpioState.setOutputState(openBCM18Gpio, buttonState2);
+                    ((Button) view).setText(buttonState2 == false ? "开启" : "关闭");
+                    buttonState2=!buttonState2;
+                    break;
+            }
+        } catch (Exception e) {
+
+        }
     }
 }

@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.google.android.things.device.ScreenManager;
+
 
 import org.thingsboard.sample.gpiocontrol.R;
 import org.thingsboard.sample.gpiocontrol.base.BaseActivity;

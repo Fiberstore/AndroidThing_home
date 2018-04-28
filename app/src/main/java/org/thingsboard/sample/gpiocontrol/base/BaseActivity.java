@@ -24,6 +24,8 @@ public class BaseActivity extends Activity {
     private Handler handler = new Handler();
     private long time = 1000 * 6;
 
+    public String TAG=getClass().getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

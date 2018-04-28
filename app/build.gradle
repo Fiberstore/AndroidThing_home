@@ -33,19 +33,13 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-
-        sourceSets {
-            main {
-                jniLibs.srcDirs = ['libs']
-            }
-        }
     }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    provided 'com.google.android.things:androidthings:0.7-devpreview'
     compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.0'
+    compileOnly 'com.google.android.things:androidthings:0.8-devpreview'
     compile files('libs/Sunflower.jar')
     compile files('libs/Msc.jar')
     compile 'com.android.support:support-v4:26.0.0-alpha1'
@@ -56,4 +50,5 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.6.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
     implementation files('libs/gprintersdkv1.jar')
+    compile project(path: ':gps')
 }

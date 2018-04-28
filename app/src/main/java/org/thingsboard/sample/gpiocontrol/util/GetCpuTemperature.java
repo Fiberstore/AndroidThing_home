@@ -42,7 +42,7 @@ public class GetCpuTemperature {
         public void run() {
             String read = WriteReadADBShell.read("/sys/class/thermal/thermal_zone0/temp");
             final double temp = Integer.parseInt(read) / 1000.0;
-            Log.e("temp", temp + "");
+            Log.d("temp", temp + "");
             getCPUTempInfoInterface.getCpuTempDoubleInfo(temp);
 
             // getNetTime();
