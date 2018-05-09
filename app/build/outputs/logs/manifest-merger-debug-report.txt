@@ -1,82 +1,85 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-74:12
-INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-74:12
-INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-74:12
-INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-74:12
-MERGED from [com.android.support:appcompat-v7:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0-beta1.aar\047d2ce585bb96aa773077e8b9070464\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-v4:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-beta1.aar\3d7dfb7603fa722c92e1581f933159d8\AndroidManifest.xml:17:1-31:12
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-81:12
+INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-81:12
+INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-81:12
+INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-81:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\5e39c4e38c94741d1a177d4b1b6c5395\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\f3b7cfea841d7442a3a4867c7d141413\AndroidManifest.xml:17:1-22:12
 MERGED from [com.zhy:okhttputils:2.6.2] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\okhttputils-2.6.2.aar\f8d8cc306de0b3a26936f4a76c69bad6\AndroidManifest.xml:2:1-11:12
 MERGED from [:gps] F:\androidThing\AndroidThing_home\gps\build\intermediates\manifests\full\debug\AndroidManifest.xml:17:1-32:12
 MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\glide-4.6.1.aar\d37f642986df2ef790ca03d9bda757ab\AndroidManifest.xml:2:1-13:12
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0-beta1.aar\a0039d91fbc738d5e433632371d2e1cb\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-vector-drawable:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0-beta1.aar\2f53c19a5b6745db18a155abdc4e959b\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\0df3c0f026352c73a0c11cddf27cf295\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\aa50e3f6ff668d5038c622310aa29e15\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-beta1.aar\b50fa82f18866d1e50d16c287c57eda5\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\4c3218c7797f66292f4c5bf049793801\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.0.2] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\bdf20acac3e70e9008ebd437c54988f9\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\4aacb07bf8f385303cbd1fb846214a42\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\80d6bf2eae549092952c1cccaceebb4b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\431a86103015731ae57998a1b940e157\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\edafd87996989b34a8e5bece3aa2f251\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\c16f9d043b23144b1a03909298770359\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\331475a510b7656abe0ef4d2a9880b89\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\f260503da5a71a05a80998eb9394d856\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.6.1.aar\1728507185aa35942b99b4f58f27725d\AndroidManifest.xml:2:1-11:12
-MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\46f3e1273afd211b0305b5d58e687b4e\AndroidManifest.xml:17:1-24:12
-INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-74:12
-INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-74:12
-INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-74:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\b6174c9a79c92dc8f6e1633207c2a89f\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\932c40f4c572922f6adf51c054b5e55b\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\f4af5923782a194577e102b5a5aa4879\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\063722726e597e5c363bcbd3862724ba\AndroidManifest.xml:17:1-22:12
+INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-81:12
+INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-81:12
+INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-81:12
 	package
-		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:19:5-49
+		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:19:11-41
 		INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml
 		INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml
-		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-74:12
+		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-81:12
 		INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml
-		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-74:12
+		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:18:1-81:12
 		INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:18:11-69
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:21:5-79
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:21:5-78
 	android:name
 		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:21:22-76
 uses-permission#android.permission.INTERNET
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:22:5-67
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:22:5-66
 	android:name
 		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:22:22-64
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:23:5-71
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:23:5-70
 	android:name
 		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:23:22-68
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:24:5-76
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:24:5-75
 	android:name
 		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:24:22-73
 uses-permission#android.permission.CHANGE_NETWORK_STATE
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:25:5-79
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:25:5-78
 	android:name
 		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:25:22-76
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:26:5-75
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:26:5-74
 	android:name
 		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:26:22-72
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:27:5-79
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:27:5-78
 	android:name
 		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:27:22-76
 uses-permission#android.permission.READ_CONTACTS
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:28:5-72
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:28:5-71
 	android:name
 		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:28:22-69
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:29:5-81
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:29:5-80
 	android:name
 		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:29:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:30:5-80
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:30:5-79
 	android:name
 		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:30:22-77
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:32:5-81
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:32:5-80
 	android:name
 		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:32:22-78
 uses-permission#android.permission.GET_TASKS
@@ -96,7 +99,7 @@ ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:36
 	android:name
 		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:36:22-71
 uses-permission#com.google.android.things.permission.MANAGE_BLUETOOTH
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:37:5-93
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:37:5-92
 	android:name
 		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:37:22-90
 uses-permission#com.google.android.things.permission.MODIFY_SCREEN_SETTINGS
@@ -110,25 +113,15 @@ MERGED from [:gps] F:\androidThing\AndroidThing_home\gps\build\intermediates\man
 	android:name
 		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:41:22-91
 uses-permission#com.google.android.things.permission.MANAGE_GNSS_DRIVERS
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:43:5-96
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:43:5-95
 	android:name
 		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:43:22-93
 application
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:45:5-73:19
-MERGED from [com.android.support:appcompat-v7:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0-beta1.aar\047d2ce585bb96aa773077e8b9070464\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:appcompat-v7:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0-beta1.aar\047d2ce585bb96aa773077e8b9070464\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-v4:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-beta1.aar\3d7dfb7603fa722c92e1581f933159d8\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-v4:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-beta1.aar\3d7dfb7603fa722c92e1581f933159d8\AndroidManifest.xml:25:5-29:19
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:45:5-80:19
 MERGED from [:gps] F:\androidThing\AndroidThing_home\gps\build\intermediates\manifests\full\debug\AndroidManifest.xml:26:5-30:19
 MERGED from [:gps] F:\androidThing\AndroidThing_home\gps\build\intermediates\manifests\full\debug\AndroidManifest.xml:26:5-30:19
 MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\glide-4.6.1.aar\d37f642986df2ef790ca03d9bda757ab\AndroidManifest.xml:11:5-20
 MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\glide-4.6.1.aar\d37f642986df2ef790ca03d9bda757ab\AndroidManifest.xml:11:5-20
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0-beta1.aar\a0039d91fbc738d5e433632371d2e1cb\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0-beta1.aar\a0039d91fbc738d5e433632371d2e1cb\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-vector-drawable:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0-beta1.aar\2f53c19a5b6745db18a155abdc4e959b\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-vector-drawable:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0-beta1.aar\2f53c19a5b6745db18a155abdc4e959b\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-media-compat:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-beta1.aar\b50fa82f18866d1e50d16c287c57eda5\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-beta1.aar\b50fa82f18866d1e50d16c287c57eda5\AndroidManifest.xml:25:5-29:19
 MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.6.1.aar\1728507185aa35942b99b4f58f27725d\AndroidManifest.xml:9:5-20
 MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.6.1.aar\1728507185aa35942b99b4f58f27725d\AndroidManifest.xml:9:5-20
 	android:label
@@ -140,91 +133,119 @@ MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] C:\Users\zhangxiang\.gr
 	android:theme
 		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:50:9-68
 	android:name
-		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:46:9-50
+		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:46:9-70
 uses-library#com.google.android.things
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:53:9-66
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:52:9-65
 MERGED from [:gps] F:\androidThing\AndroidThing_home\gps\build\intermediates\manifests\full\debug\AndroidManifest.xml:27:9-29:40
 MERGED from [:gps] F:\androidThing\AndroidThing_home\gps\build\intermediates\manifests\full\debug\AndroidManifest.xml:27:9-29:40
 	android:name
-		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:53:23-63
-activity#org.thingsboard.sample.gpiocontrol.activity.UartGpsActivity
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:55:9-68:20
+		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:52:23-63
+activity#com.thingsboard.home.activity.HomeActivity
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:54:9-69:20
 	android:launchMode
-		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:55:60-90
+		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:56:13-43
 	android:name
-		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:55:19-59
+		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:55:13-50
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:56:13-59:29
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:57:13-60:29
 action#android.intent.action.MAIN
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:57:17-69
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:58:17-68
 	android:name
-		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:57:25-66
+		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:58:25-66
 category#android.intent.category.LAUNCHER
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:58:17-77
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:59:17-76
 	android:name
-		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:58:27-74
+		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:59:27-74
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.IOT_LAUNCHER
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:62:13-67:29
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:63:13-68:29
 category#android.intent.category.IOT_LAUNCHER
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:65:17-81
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:66:17-80
 	android:name
-		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:65:27-78
+		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:66:27-78
 category#android.intent.category.DEFAULT
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:66:17-76
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:67:17-75
 	android:name
-		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:66:27-73
-activity#org.thingsboard.sample.gpiocontrol.activity.GetTodayWeatherInfoActivity
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:69:9-73
+		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:67:27-73
+activity#com.thingsboard.home.activity.GetTodayWeatherInfoActivity
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:70:9-73
 	android:name
-		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:69:19-71
-activity#org.thingsboard.sample.gpiocontrol.activity.GpioControlActivity
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:70:9-65
+		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:70:19-71
+activity#com.thingsboard.home.activity.UartGpsActivity
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:71:9-61
 	android:name
-		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:70:19-63
-activity#org.thingsboard.sample.gpiocontrol.activity.NewActivity
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:71:9-57
+		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:71:19-59
+activity#com.thingsboard.home.activity.KuGouMusicActivity
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:72:9-64
 	android:name
-		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:71:19-55
-activity#org.thingsboard.sample.gpiocontrol.device.bluetooth.BluetoothDeviceListActivity
-ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:72:9-81
+		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:72:19-62
+activity#com.thingsboard.home.activity.GpioControlActivity
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:73:9-65
 	android:name
-		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:72:19-79
+		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:73:19-63
+activity#com.thingsboard.home.activity.NewActivity
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:74:9-57
+	android:name
+		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:74:19-55
+activity#com.thingsboard.home.activity.I2CInfoActivity
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:75:9-61
+	android:name
+		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:75:19-59
+activity#com.thingsboard.home.activity.BluetoothDeviceListActivity
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:76:9-93
+	android:name
+		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:76:19-91
+activity#com.thingsboard.home.activity.ConnectMqttActivity
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:77:9-65
+	android:name
+		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:77:19-63
+activity#com.thingsboard.home.activity.TimeActivity
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:78:9-58
+	android:name
+		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:78:19-56
+activity#com.thingsboard.home.activity.SvgTest
+ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:79:9-53
+	android:name
+		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml:79:19-51
 uses-sdk
 INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml
 INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml
-MERGED from [com.android.support:appcompat-v7:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0-beta1.aar\047d2ce585bb96aa773077e8b9070464\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0-beta1.aar\047d2ce585bb96aa773077e8b9070464\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:support-v4:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-beta1.aar\3d7dfb7603fa722c92e1581f933159d8\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-beta1.aar\3d7dfb7603fa722c92e1581f933159d8\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\5e39c4e38c94741d1a177d4b1b6c5395\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\5e39c4e38c94741d1a177d4b1b6c5395\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\f3b7cfea841d7442a3a4867c7d141413\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\f3b7cfea841d7442a3a4867c7d141413\AndroidManifest.xml:20:5-44
 MERGED from [com.zhy:okhttputils:2.6.2] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\okhttputils-2.6.2.aar\f8d8cc306de0b3a26936f4a76c69bad6\AndroidManifest.xml:7:5-9:41
 MERGED from [com.zhy:okhttputils:2.6.2] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\okhttputils-2.6.2.aar\f8d8cc306de0b3a26936f4a76c69bad6\AndroidManifest.xml:7:5-9:41
 MERGED from [:gps] F:\androidThing\AndroidThing_home\gps\build\intermediates\manifests\full\debug\AndroidManifest.xml:20:5-22:41
 MERGED from [:gps] F:\androidThing\AndroidThing_home\gps\build\intermediates\manifests\full\debug\AndroidManifest.xml:20:5-22:41
 MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\glide-4.6.1.aar\d37f642986df2ef790ca03d9bda757ab\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\glide-4.6.1.aar\d37f642986df2ef790ca03d9bda757ab\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0-beta1.aar\a0039d91fbc738d5e433632371d2e1cb\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0-beta1.aar\a0039d91fbc738d5e433632371d2e1cb\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0-beta1.aar\2f53c19a5b6745db18a155abdc4e959b\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0-beta1.aar\2f53c19a5b6745db18a155abdc4e959b\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\0df3c0f026352c73a0c11cddf27cf295\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\0df3c0f026352c73a0c11cddf27cf295\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\aa50e3f6ff668d5038c622310aa29e15\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\aa50e3f6ff668d5038c622310aa29e15\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-beta1.aar\b50fa82f18866d1e50d16c287c57eda5\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-beta1.aar\b50fa82f18866d1e50d16c287c57eda5\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\4c3218c7797f66292f4c5bf049793801\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\4c3218c7797f66292f4c5bf049793801\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.0.2] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\bdf20acac3e70e9008ebd437c54988f9\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.0.2] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\bdf20acac3e70e9008ebd437c54988f9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\4aacb07bf8f385303cbd1fb846214a42\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\4aacb07bf8f385303cbd1fb846214a42\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\80d6bf2eae549092952c1cccaceebb4b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\80d6bf2eae549092952c1cccaceebb4b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\431a86103015731ae57998a1b940e157\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\431a86103015731ae57998a1b940e157\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\edafd87996989b34a8e5bece3aa2f251\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\edafd87996989b34a8e5bece3aa2f251\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\c16f9d043b23144b1a03909298770359\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\c16f9d043b23144b1a03909298770359\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\331475a510b7656abe0ef4d2a9880b89\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\331475a510b7656abe0ef4d2a9880b89\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\f260503da5a71a05a80998eb9394d856\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\f260503da5a71a05a80998eb9394d856\AndroidManifest.xml:20:5-44
 MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.6.1.aar\1728507185aa35942b99b4f58f27725d\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.6.1.aar\1728507185aa35942b99b4f58f27725d\AndroidManifest.xml:5:5-7:41
-MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\46f3e1273afd211b0305b5d58e687b4e\AndroidManifest.xml:20:5-22:41
-MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\46f3e1273afd211b0305b5d58e687b4e\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\b6174c9a79c92dc8f6e1633207c2a89f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\b6174c9a79c92dc8f6e1633207c2a89f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\932c40f4c572922f6adf51c054b5e55b\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\932c40f4c572922f6adf51c054b5e55b\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\f4af5923782a194577e102b5a5aa4879\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\f4af5923782a194577e102b5a5aa4879\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\063722726e597e5c363bcbd3862724ba\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\063722726e597e5c363bcbd3862724ba\AndroidManifest.xml:20:5-44
 INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml
 INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml
-	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0-beta1.aar\047d2ce585bb96aa773077e8b9070464\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
 		INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml
 		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml
@@ -233,17 +254,3 @@ INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml
 		INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml
 		ADDED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml
 		INJECTED from F:\androidThing\AndroidThing_home\app\src\main\AndroidManifest.xml
-meta-data#android.support.VERSION
-ADDED from [com.android.support:appcompat-v7:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0-beta1.aar\047d2ce585bb96aa773077e8b9070464\AndroidManifest.xml:26:9-28:44
-MERGED from [com.android.support:support-v4:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-beta1.aar\3d7dfb7603fa722c92e1581f933159d8\AndroidManifest.xml:26:9-28:44
-MERGED from [com.android.support:support-v4:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-beta1.aar\3d7dfb7603fa722c92e1581f933159d8\AndroidManifest.xml:26:9-28:44
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0-beta1.aar\a0039d91fbc738d5e433632371d2e1cb\AndroidManifest.xml:23:9-25:44
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0-beta1.aar\a0039d91fbc738d5e433632371d2e1cb\AndroidManifest.xml:23:9-25:44
-MERGED from [com.android.support:support-vector-drawable:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0-beta1.aar\2f53c19a5b6745db18a155abdc4e959b\AndroidManifest.xml:23:9-25:44
-MERGED from [com.android.support:support-vector-drawable:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0-beta1.aar\2f53c19a5b6745db18a155abdc4e959b\AndroidManifest.xml:23:9-25:44
-MERGED from [com.android.support:support-media-compat:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-beta1.aar\b50fa82f18866d1e50d16c287c57eda5\AndroidManifest.xml:26:9-28:44
-MERGED from [com.android.support:support-media-compat:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-beta1.aar\b50fa82f18866d1e50d16c287c57eda5\AndroidManifest.xml:26:9-28:44
-	android:value
-		ADDED from [com.android.support:appcompat-v7:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0-beta1.aar\047d2ce585bb96aa773077e8b9070464\AndroidManifest.xml:28:13-41
-	android:name
-		ADDED from [com.android.support:appcompat-v7:26.0.0-beta1] C:\Users\zhangxiang\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0-beta1.aar\047d2ce585bb96aa773077e8b9070464\AndroidManifest.xml:27:13-51

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_margin="5dp"
+              android:orientation="vertical"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:fontFamily="@font/msyh_font"
+            android:text="时间"
+            android:id="@+id/bt_time"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"/>
+
+        <Button
+            android:text="GPS"
+            android:id="@+id/bt_gps"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"/>
+
+        <Button
+            android:fontFamily="@font/msyh_font"
+            android:text="酷狗"
+            android:id="@+id/bt_kugou"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:text="MQTT"
+            android:id="@+id/bt_mqtt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"/>
+
+        <Button
+            android:text="i2c"
+            android:id="@+id/bt_i2c"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"/>
+
+        <Button
+            android:text="Uart"
+            android:id="@+id/bt_uart"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:text="SVG"
+            android:id="@+id/bt_svg"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"/>
+
+        <Button
+            android:fontFamily="@font/msyh_font"
+            android:id="@+id/bt_blueTooth"
+            android:text="蓝牙列表"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"/>
+
+        <Button
+            android:fontFamily="@font/msyh_font"
+            android:text="欢迎页面"
+            android:id="@+id/bt_welcome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

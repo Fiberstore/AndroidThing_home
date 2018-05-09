@@ -15,13 +15,13 @@
     limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.thingsboard.sample.gpiocontrol"
+    package="com.thingsboard.home"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="26"
-        android:targetSdkVersion="26" />
+        android:targetSdkVersion="27" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -46,7 +46,7 @@
     <uses-permission android:name="com.google.android.things.permission.MANAGE_GNSS_DRIVERS" />
 
     <application
-        android:name="org.thingsboard.sample.gpiocontrol.application.MyApplication"
+        android:name="com.thingsboard.home.application.MyApplication"
         android:allowBackup="true"
         android:debuggable="true"
         android:icon="@android:drawable/sym_def_app_icon"
@@ -56,7 +56,7 @@
         <uses-library android:name="com.google.android.things" />
 
         <activity
-            android:name="org.thingsboard.sample.gpiocontrol.activity.UartGpsActivity"
+            android:name="com.thingsboard.home.activity.HomeActivity"
             android:launchMode="singleTop" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -72,14 +72,16 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="org.thingsboard.sample.gpiocontrol.activity.GetTodayWeatherInfoActivity" />
-        <activity android:name="org.thingsboard.sample.gpiocontrol.activity.GpioControlActivity" />
-        <activity android:name="org.thingsboard.sample.gpiocontrol.activity.NewActivity" />
-        <activity android:name="org.thingsboard.sample.gpiocontrol.device.bluetooth.BluetoothDeviceListActivity" />
-
-        <meta-data
-            android:name="android.support.VERSION"
-            android:value="26.0.0-beta1" />
+        <activity android:name="com.thingsboard.home.activity.GetTodayWeatherInfoActivity" />
+        <activity android:name="com.thingsboard.home.activity.UartGpsActivity" />
+        <activity android:name="com.thingsboard.home.activity.KuGouMusicActivity" />
+        <activity android:name="com.thingsboard.home.activity.GpioControlActivity" />
+        <activity android:name="com.thingsboard.home.activity.NewActivity" />
+        <activity android:name="com.thingsboard.home.activity.I2CInfoActivity" />
+        <activity android:name="com.thingsboard.home.activity.BluetoothDeviceListActivity" />
+        <activity android:name="com.thingsboard.home.activity.ConnectMqttActivity" />
+        <activity android:name="com.thingsboard.home.activity.TimeActivity" />
+        <activity android:name="com.thingsboard.home.activity.SvgTest" />
     </application>
 
 </manifest>

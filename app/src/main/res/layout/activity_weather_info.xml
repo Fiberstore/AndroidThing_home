@@ -128,7 +128,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp">
 
-            <org.thingsboard.sample.gpiocontrol.widget.NoticeView
+            <com.thingsboard.home.widget.NoticeView
                 android:id="@+id/cpu_temp_noticeView"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -142,81 +142,6 @@
                 app:nvTextGravity="center"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.5">
-
-            <Button
-                android:id="@+id/open_button1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:fontFamily="@font/msyh"
-                android:text="打开"/>
-
-            <Button
-                android:id="@+id/open_button2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:fontFamily="@font/msyh"
-                android:text="打开"/>
-
-            <Button
-                android:id="@+id/open_button3"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:fontFamily="@font/msyh"
-                android:text="打开"/>
-
-            <Button
-                android:id="@+id/open_button4"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:fontFamily="@font/msyh"
-                android:text="打开"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.5">
-
-            <Button
-                android:id="@+id/open_button5"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:fontFamily="@font/msyh"
-                android:text="蓝牙"/>
-
-            <Button
-                android:id="@+id/open_button6"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:fontFamily="@font/msyh"
-                android:text="打开"/>
-
-            <Button
-                android:id="@+id/open_button7"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:fontFamily="@font/msyh"
-                android:text="打开"/>
-
-            <Button
-                android:id="@+id/open_button8"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:fontFamily="@font/msyh"
-                android:text="打开"/>
-        </LinearLayout>
 
 
         <!--<TextView

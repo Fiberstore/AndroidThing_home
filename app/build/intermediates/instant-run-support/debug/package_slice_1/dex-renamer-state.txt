@@ -1,4 +1,0 @@
-#Sat Apr 28 21:21:56 CST 2018
-base.0=F\:\\androidThing\\AndroidThing_home\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\21
-path.0=classes.dex
-renamed.0=classes.dex
